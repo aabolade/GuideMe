@@ -56,28 +56,43 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    var lastMessage = "UNKNOWN"
+    
     func update(distance: CLProximity) {
         UIView.animate(withDuration: 0.8) { [unowned self ] in
             switch distance {
+                
             case .unknown:
                 self.view.backgroundColor = UIColor.gray
                 self.distanceReading.text = "UNKNOWN"
-                self.textToSpeech(string: self.distanceReading.text!)
+                if (self.lastMessage != self.distanceReading.text) {
+                    self.textToSpeech(string: self.distanceReading.text!)
+                }
+                self.lastMessage = self.distanceReading.text!
                 
             case .far:
                 self.view.backgroundColor = UIColor.blue
                 self.distanceReading.text = "FAR"
-                self.textToSpeech(string: self.distanceReading.text!)
+                if (self.lastMessage != self.distanceReading.text) {
+                    self.textToSpeech(string: self.distanceReading.text!)
+                }
+                self.lastMessage = self.distanceReading.text!
                 
             case .near:
                 self.view.backgroundColor = UIColor.orange
                 self.distanceReading.text = "Near"
-                self.textToSpeech(string: self.distanceReading.text!)
+                if (self.lastMessage != self.distanceReading.text) {
+                    self.textToSpeech(string: self.distanceReading.text!)
+                }
+                self.lastMessage = self.distanceReading.text!
                 
             case .immediate:
                 self.view.backgroundColor = UIColor.red
                 self.distanceReading.text = "RIGHT HERE"
-                self.textToSpeech(string: self.distanceReading.text!)
+                if (self.lastMessage != self.distanceReading.text) {
+                    self.textToSpeech(string: self.distanceReading.text!)
+                }
+                self.lastMessage = self.distanceReading.text!
             }
         }
     }
