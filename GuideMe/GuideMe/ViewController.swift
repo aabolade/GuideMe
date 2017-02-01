@@ -44,12 +44,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func startScanning() {
-        guard let uuid = UUID(uuidString: "25556b57fe6d") else {
+        guard let uuid = UUID(uuidString: "03AFA697-1AB3-45F6-9D32-47CFAE1D6B63") else {
             print("UUID is nil")
             return
-            
         }
-        let beaconRegion = CLBeaconRegion(proximityUUID: uuid, major: 8981, minor:  49281, identifier: "Beacon")
+    
+        let beaconRegion = CLBeaconRegion(proximityUUID: uuid, identifier: "Region")
         
         locationManager.startMonitoring(for: beaconRegion)
         locationManager.startRangingBeacons(in: beaconRegion)
@@ -66,7 +66,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 self.view.backgroundColor = UIColor.gray
                 self.distanceReading.text = "UNKNOWN"
                 if (self.lastMessage != self.distanceReading.text) {
-                    self.textToSpeech(string: self.distanceReading.text!)
+//                    self.textToSpeech(string: self.distanceReading.text!)
                 }
                 self.lastMessage = self.distanceReading.text!
                 
@@ -74,7 +74,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 self.view.backgroundColor = UIColor.blue
                 self.distanceReading.text = "FAR"
                 if (self.lastMessage != self.distanceReading.text) {
-                    self.textToSpeech(string: self.distanceReading.text!)
+//                    self.textToSpeech(string: self.distanceReading.text!)
                 }
                 self.lastMessage = self.distanceReading.text!
                 
@@ -82,7 +82,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 self.view.backgroundColor = UIColor.orange
                 self.distanceReading.text = "Near"
                 if (self.lastMessage != self.distanceReading.text) {
-                    self.textToSpeech(string: self.distanceReading.text!)
+//                    self.textToSpeech(string: self.distanceReading.text!)
                 }
                 self.lastMessage = self.distanceReading.text!
                 
@@ -90,22 +90,62 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 self.view.backgroundColor = UIColor.red
                 self.distanceReading.text = "RIGHT HERE"
                 if (self.lastMessage != self.distanceReading.text) {
-                    self.textToSpeech(string: self.distanceReading.text!)
+//                    self.textToSpeech(string: self.distanceReading.text!)
                 }
                 self.lastMessage = self.distanceReading.text!
             }
         }
     }
     
+    func showFirstBeacon(beacon: CLBeacon) {
+        switch beacon.minor {
+            
+        case 1:
+            self.distanceReading.text = "Louisa"
+            if (self.lastMessage != self.distanceReading.text) {
+                self.textToSpeech(string: self.distanceReading.text!)
+            }
+            self.lastMessage = self.distanceReading.text!
+            
+        case 2:
+            self.distanceReading.text = "Courtney"
+            if (self.lastMessage != self.distanceReading.text) {
+                self.textToSpeech(string: self.distanceReading.text!)
+            }
+            self.lastMessage = self.distanceReading.text!
+
+        default:
+            self.distanceReading.text = "Unknown"
+            if (self.lastMessage != self.distanceReading.text) {
+                self.textToSpeech(string: self.distanceReading.text!)
+            }
+            self.lastMessage = self.distanceReading.text!
+                }
+        
+           }
+    
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
+        beacons.sorted {$0.accuracy < $1.accuracy}
+
         if beacons.count > 0 {
             let beacon = beacons[0]
-            update(distance: beacon.proximity)
+            print("SINGLE BEACON: \(beacon)")
+
+//            update(distance: beacon.proximity)
+            showFirstBeacon(beacon: beacon)
         } else {
-            update(distance: .unknown)
+//            update(distance: .unknown)
         }
     }
     
+    
+    @IBOutlet weak var textView: UILabel!
+    
+    let synth = AVSpeechSynthesizer()
+    var myUtterance = AVSpeechUtterance(string: "Guide me has begun scanning")
+
+    @IBAction func welcomeMessage(_ sender: UIButton) {
+
     func textToSpeechSettings(string: String) {
         let synth = AVSpeechSynthesizer()
         var myUtterance = AVSpeechUtterance(string: "")
@@ -113,6 +153,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         myUtterance.rate = 0.3
         myUtterance.volume = 1.0
         synth.speak(myUtterance)
+
     }
     
 
