@@ -28,11 +28,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybE-LJ-txn">
-                                <rect key="frame" x="111" y="410" width="98" height="61"/>
+                                <rect key="frame" x="111" y="387" width="98" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SPEAK"/>
                                 <connections>
                                     <action selector="textToSpeech:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Loy-g4-pFi"/>
+                                    <action selector="welcomeMessage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KS8-4i-eCL"/>
                                 </connections>
                             </button>
                         </subviews>
