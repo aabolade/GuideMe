@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
@@ -46,11 +47,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         guard let uuid = UUID(uuidString: "25556b57fe6d") else {
             print("UUID is nil")
             return
+            
         }
         let beaconRegion = CLBeaconRegion(proximityUUID: uuid, major: 8981, minor:  49281, identifier: "Beacon")
         
         locationManager.startMonitoring(for: beaconRegion)
         locationManager.startRangingBeacons(in: beaconRegion)
+        
     }
     
     func update(distance: CLProximity) {
@@ -59,18 +62,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             case .unknown:
                 self.view.backgroundColor = UIColor.gray
                 self.distanceReading.text = "UNKNOWN"
+                self.textToSpeech(string: self.distanceReading.text!)
                 
             case .far:
                 self.view.backgroundColor = UIColor.blue
                 self.distanceReading.text = "FAR"
+                self.textToSpeech(string: self.distanceReading.text!)
                 
             case .near:
                 self.view.backgroundColor = UIColor.orange
                 self.distanceReading.text = "Near"
+                self.textToSpeech(string: self.distanceReading.text!)
                 
             case .immediate:
                 self.view.backgroundColor = UIColor.red
                 self.distanceReading.text = "RIGHT HERE"
+                self.textToSpeech(string: self.distanceReading.text!)
             }
         }
     }
@@ -83,6 +90,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             update(distance: .unknown)
         }
     }
+    
+    
+    @IBOutlet weak var textView: UILabel!
+    
+    let synth = AVSpeechSynthesizer()
+    var myUtterance = AVSpeechUtterance(string: "Guide me has begun scanning")
 
+    @IBAction func welcomeMessage(_ sender: UIButton) {
+        myUtterance = AVSpeechUtterance(string: "Guide me has begun scanning")
+        myUtterance.rate = 0.3
+        myUtterance.volume = 1.0
+        synth.speak(myUtterance)
+    }
+    
+    func textToSpeech(string: String) {
+        myUtterance = AVSpeechUtterance(string: string)
+        myUtterance.rate = 0.3
+        myUtterance.volume = 1.0
+        synth.speak(myUtterance)
+        
+    }
+    
 }
 
