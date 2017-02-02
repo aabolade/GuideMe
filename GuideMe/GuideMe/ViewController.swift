@@ -40,14 +40,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        whenInUse(status: status)
+    }
+
+    
+    func whenInUse(status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
-            if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
-                if CLLocationManager.isRangingAvailable() {
-                    startScanning()
-                }
-            }
+            montoringAvailable()
         }
     }
+    
+    func montoringAvailable() {
+        if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
+            rangingAvailable()
+        }
+    }
+    
+    func rangingAvailable() {
+        if CLLocationManager.isRangingAvailable() {
+            startScanning()
+        }
+    }
+
     
     func startScanning() {
         guard let uuid = UUID(uuidString: "03AFA697-1AB3-45F6-9D32-47CFAE1D6B63") else {
