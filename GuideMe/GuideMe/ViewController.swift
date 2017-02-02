@@ -63,7 +63,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     
     func startScanning() {
-        guard let uuid = UUID(uuidString: "03AFA697-1AB3-45F6-9D32-47CFAE1D6B63") else {
+        guard let uuid = UUID(uuidString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D") else {
             print("UUID is nil")
             return
         }
@@ -78,10 +78,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func showFirstBeacon(beacon: CLBeacon) {
         switch beacon.minor {
         case 1:
-            setTextLabelAndSpeak(text: "Louisa")
-        case 2:
-            setTextLabelAndSpeak(text: "Courtney")
-
+            setTextLabelAndSpeak(text: "Phone")
+        case 65159:
+            setTextLabelAndSpeak(text: "Beacon 3")
+        case 41693:
+            setTextLabelAndSpeak(text: "Beacon 1")
+        case 49281:
+            setTextLabelAndSpeak(text: "Beacon 2")
         default:
            setTextLabelAndSpeak(text: "There are no beacons in this area")
         }
