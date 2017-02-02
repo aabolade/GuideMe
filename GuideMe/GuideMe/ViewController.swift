@@ -33,12 +33,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.distanceReading.text = lastMessage
         self.textToSpeech(string: lastMessage)
         
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -108,8 +106,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var textView: UILabel!
 
     func textToSpeechSettings(string: String) {
-        let synth = AVSpeechSynthesizer()
-        var myUtterance = AVSpeechUtterance(string: "")
         myUtterance = AVSpeechUtterance(string: string)
         myUtterance.rate = 0.3
         myUtterance.volume = 1.0
@@ -118,11 +114,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func setTextLabelAndSpeak(text: String) {
         self.distanceReading.text = text
+        onlySpeakOnce()
+        self.lastMessage = self.distanceReading.text!
+    }
+    
+    func onlySpeakOnce() {
         if (self.lastMessage != self.distanceReading.text) {
             self.textToSpeech(string: self.distanceReading.text!)
         }
-        self.lastMessage = self.distanceReading.text!
     }
+    
     
     func textToSpeech(string: String) {
         textToSpeechSettings(string: string)
