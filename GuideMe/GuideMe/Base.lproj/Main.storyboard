@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,17 +23,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UNKNOWN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eG-h7-O4L">
-                                <rect key="frame" x="57.5" y="260" width="205" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guide me" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eG-h7-O4L">
+                                <rect key="frame" x="40" y="259" width="241" height="50"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBn-zY-3qj">
+                                <rect key="frame" x="260" y="10" width="50" height="50"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Settings"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="CGv-t6-Nhz"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="NoM-P8-fqx"/>
+                                    <constraint firstAttribute="width" secondItem="iBn-zY-3qj" secondAttribute="height" multiplier="1:1" id="rbP-ZZ-pqm"/>
+                                </constraints>
+                                <state key="normal" image="gear"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgn-ZH-pPC">
+                                <rect key="frame" x="16" y="10" width="50" height="50"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Information"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2Lg-dR-f3d"/>
+                                    <constraint firstAttribute="width" constant="50" id="5Dz-Ac-nyG"/>
+                                    <constraint firstAttribute="width" secondItem="dgn-ZH-pPC" secondAttribute="height" multiplier="1:1" id="gJg-j0-oOf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="50"/>
+                                <state key="normal" title="i">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="dgn-ZH-pPC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-10" id="DJ8-4P-Xv8"/>
+                            <constraint firstAttribute="trailing" secondItem="iBn-zY-3qj" secondAttribute="trailing" constant="10" id="Jh0-Dc-lz5"/>
                             <constraint firstItem="0eG-h7-O4L" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="L7p-oe-ZJV"/>
                             <constraint firstItem="0eG-h7-O4L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OT2-MQ-59H"/>
+                            <constraint firstItem="iBn-zY-3qj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="10" id="ZQ0-kP-5mv"/>
+                            <constraint firstItem="dgn-ZH-pPC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ZWE-cq-zQo"/>
                         </constraints>
                     </view>
                     <connections>
@@ -44,4 +73,7 @@
             <point key="canvasLocation" x="138.75" y="135.21126760563379"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gear" width="1707" height="1707"/>
+    </resources>
 </document>
