@@ -15,6 +15,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager: CLLocationManager!
 
     var lastMessage = "Welcome to Guide Me"
+    let synth = AVSpeechSynthesizer()
+    var myUtterance = AVSpeechUtterance(string: "Guide me has begun scanning")
 
     @IBOutlet weak var distanceReading: UILabel!
     
@@ -31,23 +33,35 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.distanceReading.text = lastMessage
         self.textToSpeech(string: lastMessage)
         
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        whenInUse(status: status)
+    }
+
+    
+    func whenInUse(status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
-            if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
-                if CLLocationManager.isRangingAvailable() {
-                    startScanning()
-                }
-            }
+            montoringAvailable()
         }
     }
+    
+    func montoringAvailable() {
+        if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
+            rangingAvailable()
+        }
+    }
+    
+    func rangingAvailable() {
+        if CLLocationManager.isRangingAvailable() {
+            startScanning()
+        }
+    }
+
     
     func startScanning() {
         guard let uuid = UUID(uuidString: "03AFA697-1AB3-45F6-9D32-47CFAE1D6B63") else {
@@ -64,59 +78,52 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func showFirstBeacon(beacon: CLBeacon) {
         switch beacon.minor {
-            
         case 1:
-            self.distanceReading.text = "Louisa"
-            if (self.lastMessage != self.distanceReading.text) {
-                self.textToSpeech(string: self.distanceReading.text!)
-            }
-            self.lastMessage = self.distanceReading.text!
-            
+            setTextLabelAndSpeak(text: "Louisa")
         case 2:
-            self.distanceReading.text = "Courtney"
-            if (self.lastMessage != self.distanceReading.text) {
-                self.textToSpeech(string: self.distanceReading.text!)
-            }
-            self.lastMessage = self.distanceReading.text!
+            setTextLabelAndSpeak(text: "Courtney")
 
         default:
-            self.distanceReading.text = "Unknown"
-            if (self.lastMessage != self.distanceReading.text) {
-                self.textToSpeech(string: self.distanceReading.text!)
-            }
-            self.lastMessage = self.distanceReading.text!
-                }
-        
-           }
-    
-    func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
-        beacons.sorted {$0.accuracy < $1.accuracy}
-
-        if beacons.count > 0 {
-            let beacon = beacons[0]
-            print("SINGLE BEACON: \(beacon)")
-            showFirstBeacon(beacon: beacon)
-        } else {
+           setTextLabelAndSpeak(text: "There are no beacons in this area")
         }
     }
     
-    @IBOutlet weak var textView: UILabel!
+    func findBeacons(beacons: [CLBeacon]) {
+        if beacons.count > 0 {
+            let beacon = beacons[0]
+            showFirstBeacon(beacon: beacon)
+        } else {
+            setTextLabelAndSpeak(text: "There are no beacons in this area")
+        }
+    }
     
-    let synth = AVSpeechSynthesizer()
-    var myUtterance = AVSpeechUtterance(string: "Guide me has begun scanning")
+    func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
+        beacons.sorted {$0.accuracy < $1.accuracy}
+        findBeacons(beacons: beacons)
+    }
+    
+    
+    @IBOutlet weak var textView: UILabel!
 
     func textToSpeechSettings(string: String) {
-        let synth = AVSpeechSynthesizer()
-        var myUtterance = AVSpeechUtterance(string: "")
         myUtterance = AVSpeechUtterance(string: string)
         myUtterance.rate = 0.3
         myUtterance.volume = 1.0
         synth.speak(myUtterance)
     }
-
-    @IBAction func welcomeMessage(_ sender: UIButton) {
-        textToSpeechSettings(string: "Guide me has begun scanning")
+    
+    func setTextLabelAndSpeak(text: String) {
+        self.distanceReading.text = text
+        onlySpeakOnce()
+        self.lastMessage = self.distanceReading.text!
     }
+    
+    func onlySpeakOnce() {
+        if (self.lastMessage != self.distanceReading.text) {
+            self.textToSpeech(string: self.distanceReading.text!)
+        }
+    }
+    
     
     func textToSpeech(string: String) {
         textToSpeechSettings(string: string)
