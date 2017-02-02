@@ -16,7 +16,7 @@ class Speech {
     
     func textToSpeechSettings(string: String) {
         myUtterance = AVSpeechUtterance(string: string)
-        myUtterance.rate = 0.3
+        myUtterance.rate = 0.4
         myUtterance.volume = 1.0
         synth.speak(myUtterance)
     }
