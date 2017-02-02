@@ -15,6 +15,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager: CLLocationManager!
 
     var lastMessage = "Welcome to Guide Me"
+    let synth = AVSpeechSynthesizer()
+    var myUtterance = AVSpeechUtterance(string: "Guide me has begun scanning")
 
     @IBOutlet weak var distanceReading: UILabel!
     
@@ -80,28 +82,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         switch beacon.minor {
             
         case 1:
-            self.distanceReading.text = "Louisa"
-            if (self.lastMessage != self.distanceReading.text) {
-                self.textToSpeech(string: self.distanceReading.text!)
-            }
-            self.lastMessage = self.distanceReading.text!
-            
+            setTextLabelAndSpeak(text: "Louisa")
         case 2:
-            self.distanceReading.text = "Courtney"
-            if (self.lastMessage != self.distanceReading.text) {
-                self.textToSpeech(string: self.distanceReading.text!)
-            }
-            self.lastMessage = self.distanceReading.text!
+            setTextLabelAndSpeak(text: "Courtney")
 
         default:
-            self.distanceReading.text = "Unknown"
-            if (self.lastMessage != self.distanceReading.text) {
-                self.textToSpeech(string: self.distanceReading.text!)
-            }
-            self.lastMessage = self.distanceReading.text!
+           setTextLabelAndSpeak(text: "There are no beacons in this area")
                 }
         
            }
+    
+
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         beacons.sorted {$0.accuracy < $1.accuracy}
@@ -115,9 +106,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBOutlet weak var textView: UILabel!
-    
-    let synth = AVSpeechSynthesizer()
-    var myUtterance = AVSpeechUtterance(string: "Guide me has begun scanning")
 
     func textToSpeechSettings(string: String) {
         let synth = AVSpeechSynthesizer()
@@ -127,9 +115,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         myUtterance.volume = 1.0
         synth.speak(myUtterance)
     }
-
-    @IBAction func welcomeMessage(_ sender: UIButton) {
-        textToSpeechSettings(string: "Guide me has begun scanning")
+    
+    func setTextLabelAndSpeak(text: String) {
+        self.distanceReading.text = text
+        if (self.lastMessage != self.distanceReading.text) {
+            self.textToSpeech(string: self.distanceReading.text!)
+        }
+        self.lastMessage = self.distanceReading.text!
     }
     
     func textToSpeech(string: String) {
