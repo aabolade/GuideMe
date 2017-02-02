@@ -14,6 +14,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager!
 
+    var lastMessage = "Welcome to guide me"
+
     @IBOutlet weak var distanceReading: UILabel!
     
     override func viewDidLoad() {
@@ -23,7 +25,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
-        view.backgroundColor = UIColor.gray
+        view.backgroundColor = UIColor.black
+        
+        self.distanceReading.text = lastMessage
+        self.textToSpeech(string: lastMessage)
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -39,7 +45,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     startScanning()
                 }
             }
-           
         }
     }
     
@@ -54,47 +59,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startMonitoring(for: beaconRegion)
         locationManager.startRangingBeacons(in: beaconRegion)
         
-    }
-    
-    var lastMessage = "UNKNOWN"
-    
-    func update(distance: CLProximity) {
-        UIView.animate(withDuration: 0.8) { [unowned self ] in
-            switch distance {
-                
-            case .unknown:
-                self.view.backgroundColor = UIColor.gray
-                self.distanceReading.text = "UNKNOWN"
-                if (self.lastMessage != self.distanceReading.text) {
-//                    self.textToSpeech(string: self.distanceReading.text!)
-                }
-                self.lastMessage = self.distanceReading.text!
-                
-            case .far:
-                self.view.backgroundColor = UIColor.blue
-                self.distanceReading.text = "FAR"
-                if (self.lastMessage != self.distanceReading.text) {
-//                    self.textToSpeech(string: self.distanceReading.text!)
-                }
-                self.lastMessage = self.distanceReading.text!
-                
-            case .near:
-                self.view.backgroundColor = UIColor.orange
-                self.distanceReading.text = "Near"
-                if (self.lastMessage != self.distanceReading.text) {
-//                    self.textToSpeech(string: self.distanceReading.text!)
-                }
-                self.lastMessage = self.distanceReading.text!
-                
-            case .immediate:
-                self.view.backgroundColor = UIColor.red
-                self.distanceReading.text = "RIGHT HERE"
-                if (self.lastMessage != self.distanceReading.text) {
-//                    self.textToSpeech(string: self.distanceReading.text!)
-                }
-                self.lastMessage = self.distanceReading.text!
-            }
-        }
     }
     
     func showFirstBeacon(beacon: CLBeacon) {
@@ -130,21 +94,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if beacons.count > 0 {
             let beacon = beacons[0]
             print("SINGLE BEACON: \(beacon)")
-
-//            update(distance: beacon.proximity)
             showFirstBeacon(beacon: beacon)
         } else {
-//            update(distance: .unknown)
         }
     }
-    
     
     @IBOutlet weak var textView: UILabel!
     
     let synth = AVSpeechSynthesizer()
     var myUtterance = AVSpeechUtterance(string: "Guide me has begun scanning")
-
-    @IBAction func welcomeMessage(_ sender: UIButton) {
 
     func textToSpeechSettings(string: String) {
         let synth = AVSpeechSynthesizer()
@@ -153,9 +111,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         myUtterance.rate = 0.3
         myUtterance.volume = 1.0
         synth.speak(myUtterance)
-
     }
-    
 
     @IBAction func welcomeMessage(_ sender: UIButton) {
         textToSpeechSettings(string: "Guide me has begun scanning")
