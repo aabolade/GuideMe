@@ -78,13 +78,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func showFirstBeacon(beacon: CLBeacon) {
         switch beacon.minor {
         case 1:
-            setTextLabelAndSpeak(text: "Phone")
+            setTextLabelAndSpeak(text: "Entering the station")
         case 65159:
-            setTextLabelAndSpeak(text: "Beacon 3")
+            setTextLabelAndSpeak(text: "Stairs ahead with nine steps")
         case 41693:
-            setTextLabelAndSpeak(text: "Beacon 1")
+            setTextLabelAndSpeak(text: "Ticket barriers to the left")
         case 49281:
-            setTextLabelAndSpeak(text: "Beacon 2")
+            setTextLabelAndSpeak(text: "Left for Southbound trains")
         default:
            setTextLabelAndSpeak(text: "There are no beacons in this area")
         }
