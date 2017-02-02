@@ -14,7 +14,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager!
 
-    var lastMessage = "Welcome to guide me"
+    var lastMessage = "Welcome to Guide Me"
 
     @IBOutlet weak var distanceReading: UILabel!
     
@@ -26,6 +26,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         
         view.backgroundColor = UIColor.black
+    
         
         self.distanceReading.text = lastMessage
         self.textToSpeech(string: lastMessage)
