@@ -94,27 +94,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if beacons.count > 0 {
             let beacon = beacons[0]
             print("SINGLE BEACON: \(beacon)")
-
-//            update(distance: beacon.proximity)
             showFirstBeacon(beacon: beacon)
         } else {
-//            update(distance: .unknown)
         }
     }
-    
     
     @IBOutlet weak var textView: UILabel!
     
     let synth = AVSpeechSynthesizer()
     var myUtterance = AVSpeechUtterance(string: "Guide me has begun scanning")
 
-    @IBAction func welcomeMessage(_ sender: UIButton) {
-//        myUtterance = AVSpeechUtterance(string: "Guide me has begun scanning")
-//        myUtterance.rate = 0.3
-//        myUtterance.volume = 1.0
-//        synth.speak(myUtterance)
-    }
-    
     func textToSpeech(string: String) {
         myUtterance = AVSpeechUtterance(string: string)
         myUtterance.rate = 0.3
