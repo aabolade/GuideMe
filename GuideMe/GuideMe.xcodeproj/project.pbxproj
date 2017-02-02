@@ -12,6 +12,7 @@
 		082842C01E40F45D00DB36F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 082842BF1E40F45D00DB36F6 /* Assets.xcassets */; };
 		082842C31E40F45D00DB36F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082842C11E40F45D00DB36F6 /* LaunchScreen.storyboard */; };
 		084D91A61E4361A200AFC359 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 084D91A51E4361A200AFC359 /* Main.storyboard */; };
+		B5ADBF7C1E43631200BC6B9D /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADBF7B1E43631200BC6B9D /* Speech.swift */; };
 		CE5A11671E41FCDC00F7B631 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5A11661E41FCDC00F7B631 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		082842C21E40F45D00DB36F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		082842C41E40F45D00DB36F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		084D91A51E4361A200AFC359 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B5ADBF7B1E43631200BC6B9D /* Speech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
 		CE5A11661E41FCDC00F7B631 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -64,6 +66,7 @@
 				082842C11E40F45D00DB36F6 /* LaunchScreen.storyboard */,
 				082842C41E40F45D00DB36F6 /* Info.plist */,
 				084D91A51E4361A200AFC359 /* Main.storyboard */,
+				B5ADBF7B1E43631200BC6B9D /* Speech.swift */,
 			);
 			path = GuideMe;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5ADBF7C1E43631200BC6B9D /* Speech.swift in Sources */,
 				082842BB1E40F45D00DB36F6 /* ViewController.swift in Sources */,
 				082842B91E40F45D00DB36F6 /* AppDelegate.swift in Sources */,
 			);

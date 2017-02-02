@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVFoundation
 import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
@@ -15,9 +14,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager: CLLocationManager!
 
     var lastMessage = "Welcome to Guide Me"
-    let synth = AVSpeechSynthesizer()
-    var myUtterance = AVSpeechUtterance(string: "Guide me has begun scanning")
-
+    
+    var speech = Speech()
+    
     @IBOutlet weak var distanceReading: UILabel!
     
     override func viewDidLoad() {
@@ -105,12 +104,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var textView: UILabel!
 
-    func textToSpeechSettings(string: String) {
-        myUtterance = AVSpeechUtterance(string: string)
-        myUtterance.rate = 0.3
-        myUtterance.volume = 1.0
-        synth.speak(myUtterance)
-    }
     
     func setTextLabelAndSpeak(text: String) {
         self.distanceReading.text = text
@@ -126,7 +119,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     
     func textToSpeech(string: String) {
-        textToSpeechSettings(string: string)
+        speech.textToSpeechSettings(string: string)
     }
     
 }
