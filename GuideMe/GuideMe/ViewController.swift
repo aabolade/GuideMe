@@ -104,11 +104,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let synth = AVSpeechSynthesizer()
     var myUtterance = AVSpeechUtterance(string: "Guide me has begun scanning")
 
-    func textToSpeech(string: String) {
+    func textToSpeechSettings(string: String) {
+        let synth = AVSpeechSynthesizer()
+        var myUtterance = AVSpeechUtterance(string: "")
         myUtterance = AVSpeechUtterance(string: string)
         myUtterance.rate = 0.3
         myUtterance.volume = 1.0
         synth.speak(myUtterance)
+    }
+
+    @IBAction func welcomeMessage(_ sender: UIButton) {
+        textToSpeechSettings(string: "Guide me has begun scanning")
+    }
+    
+    func textToSpeech(string: String) {
+        textToSpeechSettings(string: string)
     }
     
 }
