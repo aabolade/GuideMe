@@ -116,6 +116,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func onlySpeakOnce() {
         if (self.lastMessage != self.distanceReading.text) {
+            speech.playSound()
             self.textToSpeech(string: self.distanceReading.text!)
         }
     }
