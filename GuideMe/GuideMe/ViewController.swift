@@ -80,7 +80,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func showFirstBeacon(beacon: CLBeacon) {
         switch beacon.minor {
-            
         case 1:
             setTextLabelAndSpeak(text: "Louisa")
         case 2:
@@ -88,22 +87,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
         default:
            setTextLabelAndSpeak(text: "There are no beacons in this area")
-                }
-        
-           }
+        }
+    }
     
-
+    func findBeacons(beacons: [CLBeacon]) {
+        if beacons.count > 0 {
+            let beacon = beacons[0]
+            showFirstBeacon(beacon: beacon)
+        } else {
+            setTextLabelAndSpeak(text: "There are no beacons in this area")
+        }
+    }
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         beacons.sorted {$0.accuracy < $1.accuracy}
-
-        if beacons.count > 0 {
-            let beacon = beacons[0]
-            print("SINGLE BEACON: \(beacon)")
-            showFirstBeacon(beacon: beacon)
-        } else {
-        }
+        findBeacons(beacons: beacons)
     }
+    
     
     @IBOutlet weak var textView: UILabel!
 
