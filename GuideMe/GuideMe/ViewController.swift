@@ -75,25 +75,40 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    func showFirstBeacon(beacon: CLBeacon) {
-        switch beacon.minor {
-        case 1:
-            setTextLabelAndSpeak(text: "Phone")
-        case 65159:
-            setTextLabelAndSpeak(text: "Beacon 3")
-        case 41693:
-            setTextLabelAndSpeak(text: "Beacon 1")
-        case 49281:
-            setTextLabelAndSpeak(text: "Beacon 2")
-        default:
-           setTextLabelAndSpeak(text: "There are no beacons in this area")
-        }
+    var fromRoad: [Int: String] = [
+        1: "Entering Algate station",
+        41693: "Stairs ahead, go down 56 steps",
+        49281: "Turn Left",
+        65159:"You are now on the Algate platform"
+    ]
+    
+    var fromPlatform: [Int: String] = [
+        65159:  "You are now on the Algate platform",
+        49281:  "Turn Right",
+        41693: "Stairs ahead, go up 56 steps",
+        1: "You are exiting Algate station"
+    ]
+    
+    func enterFromRoad(beacon: CLBeacon) {
+        let number = beacon.minor.intValue
+        setTextLabelAndSpeak(text: fromRoad[number]!)
     }
     
+    func enterFromTrain(beacon: CLBeacon) {
+        let number = beacon.minor.intValue
+        setTextLabelAndSpeak(text: fromPlatform[number]!)
+    }
+    var lastBeacon : Int = 0
     func findBeacons(beacons: [CLBeacon]) {
         if beacons.count > 0 {
             let beacon = beacons[0]
-            showFirstBeacon(beacon: beacon)
+            if beacon.minor.intValue < lastBeacon || beacon.minor.intValue == 65159 {
+                enterFromTrain(beacon: beacon)
+                lastBeacon = beacon.minor.intValue
+            } else if beacon.minor.intValue > lastBeacon {
+                enterFromRoad(beacon: beacon)
+                lastBeacon = beacon.minor.intValue
+            }
         } else {
             setTextLabelAndSpeak(text: "There are no beacons in this area")
         }
