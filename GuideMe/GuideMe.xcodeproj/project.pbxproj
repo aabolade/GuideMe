@@ -126,6 +126,7 @@
 					082842B41E40F45D00DB36F6 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = G68V5HAL8T;
+
 						ProvisioningStyle = Automatic;
 					};
 				};
