@@ -136,10 +136,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func decreaseFontSize () {
-        if
         let text = self.distanceReading
-        text?.font = UIFont(name: (text?.font.fontName)!, size: (text?.font.pointSize)! - 10)
         
+        if (Int((text?.font.pointSize)!) > 20) {
+           text?.font = UIFont(name: (text?.font.fontName)!, size: (text?.font.pointSize)! - 10)
+        }
+
     }
     
     @IBAction func IncreaseFontSize(_ sender: UIButton) {
