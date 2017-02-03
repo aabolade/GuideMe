@@ -33,10 +33,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.textToSpeech(string: lastMessage)
         
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         whenInUse(status: status)
@@ -141,5 +144,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         speech.textToSpeechSettings(string: string)
     }
     
+    func increaseFontSize () {
+        let text = self.distanceReading
+        text?.font = UIFont(name: (text?.font.fontName)!, size: (text?.font.pointSize)! + 10)
+    }
+    
+    func decreaseFontSize () {
+        let text = self.distanceReading
+        text?.font = UIFont(name: (text?.font.fontName)!, size: (text?.font.pointSize)! - 10)
+    }
+    
+    @IBAction func IncreaseFontSize(_ sender: UIButton) {
+        increaseFontSize()
+    }
+    
+    @IBAction func DecreaseFontSize(_ sender: UIButton) {
+        decreaseFontSize()
+    }
 }
 
