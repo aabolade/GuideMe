@@ -75,25 +75,47 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    func showFirstBeacon(beacon: CLBeacon) {
+    func enterFromRoad(beacon: CLBeacon) {
         switch beacon.minor {
         case 1:
-            setTextLabelAndSpeak(text: "Phone")
+            setTextLabelAndSpeak(text: "Entering Algate station")
         case 65159:
-            setTextLabelAndSpeak(text: "Beacon 3")
+            setTextLabelAndSpeak(text: "Stairs ahead, go down 56 steps")
         case 41693:
-            setTextLabelAndSpeak(text: "Beacon 1")
+            setTextLabelAndSpeak(text: "Turn Left")
         case 49281:
-            setTextLabelAndSpeak(text: "Beacon 2")
+            setTextLabelAndSpeak(text: "You are on Algate platform")
         default:
            setTextLabelAndSpeak(text: "There are no beacons in this area")
         }
     }
     
+    func enterFromTrain(beacon: CLBeacon) {
+        switch beacon.minor {
+        case 49281:
+            setTextLabelAndSpeak(text: "You are now on the Algate platform")
+        case 41693:
+            setTextLabelAndSpeak(text: "Turn Right")
+        case 65159:
+            setTextLabelAndSpeak(text: "Stairs ahead, go up 56 steps")
+        case 1:
+            setTextLabelAndSpeak(text: "You are exiting Algate station")
+        default:
+            setTextLabelAndSpeak(text: "There are no beacons in this area")
+        }
+
+    }
+    
     func findBeacons(beacons: [CLBeacon]) {
         if beacons.count > 0 {
-            let beacon = beacons[0]
-            showFirstBeacon(beacon: beacon)
+            if beacons[0].minor == 1 {
+                let beacon = beacons[0]
+                enterFromRoad(beacon: beacon)
+            } else if beacons[0].minor == 49281  {
+                let beacon = beacons[0]
+                enterFromTrain(beacon: beacon)
+            }
+            // else if user starts in the middle ask for directions 
         } else {
             setTextLabelAndSpeak(text: "There are no beacons in this area")
         }
