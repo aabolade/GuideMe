@@ -17,6 +17,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var speech = Speech()
     
+    let stationService = APIService()
+    
+    
     @IBOutlet weak var distanceReading: UILabel!
     
     override func viewDidLoad() {
@@ -31,6 +34,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         self.distanceReading.text = lastMessage
         self.textToSpeech(string: lastMessage)
+        
+
         
     }
 
