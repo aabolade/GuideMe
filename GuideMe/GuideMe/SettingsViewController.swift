@@ -11,6 +11,7 @@ import UIKit
 class SettingsViewController: UIViewController {
     
     var viewController : ViewController?
+    
     @IBOutlet weak var fontSize: UILabel!
 
     override func viewDidLoad() {
@@ -48,11 +49,18 @@ class SettingsViewController: UIViewController {
     }
     
     func updateFontSizeNumber() {
+        guard let unwrappedController = viewController else {
+            print("View Controller is nil!")
+            return
+        }
+        let text = unwrappedController.distanceReading
+        
         self.fontSize.text = "\(text?.font.pointSize)!"
     }
     
     @IBAction func FontButtonTapped(_ sender: UIButton) {
         increaseFontSize()
+        updateFontSizeNumber()
     }
     
     
