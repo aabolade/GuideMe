@@ -17,6 +17,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var speech = Speech()
     
+    
     @IBOutlet weak var distanceReading: UILabel!
     
     override func viewDidLoad() {
@@ -135,12 +136,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func decreaseFontSize () {
+        if
         let text = self.distanceReading
         text?.font = UIFont(name: (text?.font.fontName)!, size: (text?.font.pointSize)! - 10)
+        
     }
     
     @IBAction func IncreaseFontSize(_ sender: UIButton) {
         increaseFontSize()
+
     }
     
     @IBAction func DecreaseFontSize(_ sender: UIButton) {
