@@ -84,7 +84,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         case 41693:
             setTextLabelAndSpeak(text: "Turn Left")
         case 49281:
-            setTextLabelAndSpeak(text: "You are on Algate platform")
+            setTextLabelAndSpeak(text: "You are now on the Algate platform")
         default:
            setTextLabelAndSpeak(text: "There are no beacons in this area")
         }
@@ -108,14 +108,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func findBeacons(beacons: [CLBeacon]) {
         if beacons.count > 0 {
-            if beacons[0].minor == 1 {
-                let beacon = beacons[0]
-                enterFromRoad(beacon: beacon)
-            } else if beacons[0].minor == 49281  {
-                let beacon = beacons[0]
-                enterFromTrain(beacon: beacon)
-            }
-            // else if user starts in the middle ask for directions 
+            let beacon = beacons[0]
+            enterFromRoad(beacon: beacon)
         } else {
             setTextLabelAndSpeak(text: "There are no beacons in this area")
         }
