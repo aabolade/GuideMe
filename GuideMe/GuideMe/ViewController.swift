@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import AudioToolbox
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, SettingsViewControllerDelegate {
     
     var locationManager: CLLocationManager!
 
@@ -36,9 +36,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SettingsViewController" {
+            let settingsViewController = segue.destination as? SettingsViewController
+//            let navigationController = segue.destination as? UINavigationController
+//            let settingsViewController = navigationController?.topViewController as? SettingsViewController
+            
+            if let viewController = settingsViewController {
+                viewController.delegate = self
+            }
+        }
+    }
+    
+    func makeChangesToFont(size: Int) {
+        updateFontSize(fontSize: size)
     }
     
     func updateFontSize(fontSize : Int) {
@@ -46,8 +61,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             self.distanceReading.font = UIFont(name: self.distanceReading.font.fontName, size: CGFloat(fontSize))
         }
     }
-    
-
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         whenInUse(status: status)

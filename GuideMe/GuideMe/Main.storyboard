@@ -40,7 +40,7 @@
                                 </constraints>
                                 <state key="normal" image="gear"/>
                                 <connections>
-                                    <segue destination="LVg-Bw-MkR" kind="show" id="xKh-iY-taX"/>
+                                    <segue destination="LVg-Bw-MkR" kind="show" identifier="SettingsViewController" id="EDB-s0-VSb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGZ-5c-WfW">
@@ -118,8 +118,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="FontButtonTapped:" destination="LVg-Bw-MkR" eventType="touchUpInside" id="tU8-qE-ZHQ"/>
-                                    <action selector="IncreaseFontSize:" destination="LVg-Bw-MkR" eventType="touchUpInside" id="P87-Bu-2PA"/>
+                                    <action selector="IncreaseSize:" destination="LVg-Bw-MkR" eventType="touchUpInside" id="Xvb-uN-IEd"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="FontSize" text="x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8Y-CJ-LXX">

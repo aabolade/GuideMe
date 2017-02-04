@@ -8,26 +8,18 @@
 
 import UIKit
 
-protocol SettingsViewDelegate {
-    func updateFontSize(size: Int)
+protocol SettingsViewControllerDelegate {
+    func makeChangesToFont(size: Int)
 }
 
 class SettingsViewController: UIViewController {
     
-//    var viewController : ViewController?
+    var delegate: SettingsViewControllerDelegate?
     
-    @IBOutlet weak var fontSize: UILabel!
+//    @IBOutlet weak var fontSize: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        viewController = ViewController()
-//        guard let unwrappedController = viewController else {
-//            print("View Controller is nil!")
-//            return
-//        }
-//        let text = unwrappedController.distanceReading
-//        
-//        self.fontSize.text = "\(text?.font.pointSize)!"
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,35 +31,33 @@ class SettingsViewController: UIViewController {
 //        mainView.updateFontSize(fontSize :fontSize)
 //    }
     
+//    func increaseFontSize() {
+//        let mainView = parent as! ViewController
+//        let text = mainView.distanceReading
+//        let fontSize = (text?.font.pointSize)! + 10
+////        sendDataToMainView(fontSize: Int(fontSize))
+//        mainView.updateFontSize(fontSize: Int(fontSize))
+//    }
+//    
+
+    @IBAction func IncreaseSize(_ sender: UIButton) {
+        print("something")
+        increaseFontSize()
+    }
+    
     func increaseFontSize() {
         let mainView = parent as! ViewController
         let text = mainView.distanceReading
         let fontSize = (text?.font.pointSize)! + 10
-//        sendDataToMainView(fontSize: Int(fontSize))
-        mainView.updateFontSize(fontSize: Int(fontSize))
-    }
-    
-    @IBAction func IncreaseFontSize(_ sender: UIButton) {
-        increaseFontSize()
-    }
-    
-
+        print(fontSize)
         
-        var delegate: ChildNameDelegate?
-        
-        func whereTheChangesAreMade(data: String) {
-            if let del = delegate {
-                del.dataChanged(data)
-            }
+        if let delegate = self.delegate {
+            delegate.makeChangesToFont(size: Int(fontSize))
         }
-
+    }
     
-//    @IBAction func IncreaseFontSize(_ sender: UIButton) {
-//        increaseFontSize()
-//        //        updateFontSizeNumber()
-//    }
 
-    
+
 //    func increaseFontSize () {
 //        guard let unwrappedController = viewController else {
 //            print("View Controller is nil!")
@@ -95,11 +85,7 @@ class SettingsViewController: UIViewController {
 //        
 //        self.fontSize.text = "\(text?.font.pointSize)!"
 //    }
-//    
-//    @IBAction func FontButtonTapped(_ sender: UIButton) {
-//        increaseFontSize()
-//        updateFontSizeNumber()
-//    }
+//
     
     
 
