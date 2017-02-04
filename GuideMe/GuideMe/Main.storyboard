@@ -119,6 +119,7 @@
                                 </state>
                                 <connections>
                                     <action selector="FontButtonTapped:" destination="LVg-Bw-MkR" eventType="touchUpInside" id="tU8-qE-ZHQ"/>
+                                    <action selector="IncreaseFontSize:" destination="LVg-Bw-MkR" eventType="touchUpInside" id="P87-Bu-2PA"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="FontSize" text="x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8Y-CJ-LXX">

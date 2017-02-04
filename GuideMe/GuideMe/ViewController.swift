@@ -41,7 +41,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.didReceiveMemoryWarning()
     }
     
+    func updateFontSize(fontSize : Int) {
+        if (self.distanceReading.font.pointSize > 20) {
+            self.distanceReading.font = UIFont(name: self.distanceReading.font.fontName, size: CGFloat(fontSize))
+        }
+    }
     
+
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         whenInUse(status: status)
