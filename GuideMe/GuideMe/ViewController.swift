@@ -18,6 +18,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var speech = Speech()
     
+    var vibrate = Vibrate()
     
     @IBOutlet weak var distanceReading: UILabel!
     
