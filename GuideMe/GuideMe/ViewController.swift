@@ -89,7 +89,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             setTextLabelAndSpeak(text: "Beacon 3")
         case 41693:
             setTextLabelAndSpeak(text: "Beacon 1")
-            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         case 49281:
             setTextLabelAndSpeak(text: "Beacon 2")
         default:
@@ -149,7 +148,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func IncreaseFontSize(_ sender: UIButton) {
         increaseFontSize()
-
     }
     
     @IBAction func DecreaseFontSize(_ sender: UIButton) {
