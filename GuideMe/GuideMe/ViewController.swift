@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import AudioToolbox
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -16,6 +17,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var lastMessage = "Welcome to Guide Me"
     
     var speech = Speech()
+    
+    var vibrate = Vibrate()
     
     @IBOutlet weak var distanceReading: UILabel!
     
@@ -94,12 +97,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func enterFromRoad(beacon: CLBeacon) {
         let number = beacon.minor.intValue
-        setTextLabelAndSpeak(text: fromRoad[number]!)
+        if (number == 2) {
+            vibrate.vibrateForLeft()
+        } else {
+            setTextLabelAndSpeak(text: fromRoad[number]!)
+        }
     }
     
     func enterFromTrain(beacon: CLBeacon) {
         let number = beacon.minor.intValue
-        setTextLabelAndSpeak(text: fromPlatform[number]!)
+        if (number == 2) {
+            vibrate.vibrateForRight()
+        } else {
+            setTextLabelAndSpeak(text: fromPlatform[number]!)
+        }
     }
     var lastBeacon : Int = 0
     func findBeacons(beacons: [CLBeacon]) {
@@ -122,7 +133,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         findBeacons(beacons: beacons)
     }
     
-    
     @IBOutlet weak var textView: UILabel!
 
     
@@ -138,7 +148,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             self.textToSpeech(string: self.distanceReading.text!)
         }
     }
-    
     
     func textToSpeech(string: String) {
         speech.textToSpeechSettings(string: string)

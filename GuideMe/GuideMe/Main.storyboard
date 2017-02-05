@@ -61,6 +61,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="IncreaseFontSize:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lm4-AA-9Q8"/>
                                     <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wT8-x0-5Hp"/>
                                 </connections>
                             </button>
