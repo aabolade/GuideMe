@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import AudioToolbox
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -17,6 +18,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var speech = Speech()
     
+    var vibrate = Vibrate()
     
     @IBOutlet weak var distanceReading: UILabel!
     
@@ -177,7 +179,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func IncreaseFontSize(_ sender: UIButton) {
         increaseFontSize()
-
     }
     
     @IBAction func DecreaseFontSize(_ sender: UIButton) {
