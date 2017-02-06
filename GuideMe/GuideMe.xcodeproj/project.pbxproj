@@ -17,6 +17,7 @@
 		08F3774A1E487D8D009A8EAC /* Departure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F377491E487D8D009A8EAC /* Departure.swift */; };
 		08F3774C1E487DF0009A8EAC /* TrainTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F3774B1E487DF0009A8EAC /* TrainTime.swift */; };
 		87B865BF7E5799E3B1F767F0 /* Pods_GuideMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C8DBB4AD6C0E199651A44F /* Pods_GuideMe.framework */; };
+		935528E41E489AFA006C3E05 /* Vibrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935528E31E489AFA006C3E05 /* Vibrate.swift */; };
 		B5ADBF7C1E43631200BC6B9D /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADBF7B1E43631200BC6B9D /* Speech.swift */; };
 		B5ADBF811E43AC1200BC6B9D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADBF801E43AC1200BC6B9D /* SettingsViewController.swift */; };
 		CE5A11671E41FCDC00F7B631 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5A11661E41FCDC00F7B631 /* AVFoundation.framework */; };
@@ -35,6 +36,7 @@
 		08F377491E487D8D009A8EAC /* Departure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Departure.swift; sourceTree = "<group>"; };
 		08F3774B1E487DF0009A8EAC /* TrainTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainTime.swift; sourceTree = "<group>"; };
 		1F8207C2D95F178F2375D13C /* Pods-GuideMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuideMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuideMe/Pods-GuideMe.release.xcconfig"; sourceTree = "<group>"; };
+		935528E31E489AFA006C3E05 /* Vibrate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vibrate.swift; sourceTree = "<group>"; };
 		AAF824FCA5CA7946471D0006 /* Pods-GuideMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuideMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuideMe/Pods-GuideMe.debug.xcconfig"; sourceTree = "<group>"; };
 		B5ADBF7B1E43631200BC6B9D /* Speech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
 		B5ADBF801E43AC1200BC6B9D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				08F377471E487CF4009A8EAC /* APIService.swift */,
 				08F377491E487D8D009A8EAC /* Departure.swift */,
 				08F3774B1E487DF0009A8EAC /* TrainTime.swift */,
+				935528E31E489AFA006C3E05 /* Vibrate.swift */,
 			);
 			path = GuideMe;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				08F3774C1E487DF0009A8EAC /* TrainTime.swift in Sources */,
 				08F377481E487CF4009A8EAC /* APIService.swift in Sources */,
 				082842BB1E40F45D00DB36F6 /* ViewController.swift in Sources */,
+				935528E41E489AFA006C3E05 /* Vibrate.swift in Sources */,
 				082842B91E40F45D00DB36F6 /* AppDelegate.swift in Sources */,
 				B5ADBF811E43AC1200BC6B9D /* SettingsViewController.swift in Sources */,
 			);
