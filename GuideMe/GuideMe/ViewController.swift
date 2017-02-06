@@ -241,7 +241,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
     
     
     override func viewDidAppear(_ animated: Bool) {
-        print("authorization")
+       
         speechRecognizer.delegate = self
         
         SFSpeechRecognizer.requestAuthorization { authStatus in
@@ -250,24 +250,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
             
                 switch authStatus {
                 case .authorized:
-                    print("authorized")
+                   
                     self.dictatebutton.isEnabled = true
                     
                 case .denied:
                     self.dictatebutton.isEnabled = false
                     self.dictatebutton.setTitle("User denied access to speech recognition.", for: .disabled)
-                    print("denied")
+                   
                     
                 case .restricted:
                     self.dictatebutton.isEnabled = false
                     self.dictatebutton.setTitle("Speech recognition restricted on device.", for: .disabled)
-                    print("restricted")
                     
                     
                 case .notDetermined:
                     self.dictatebutton.isEnabled = false
                     self.dictatebutton.setTitle("Speech recognition not yet authorized.", for: .disabled)
-                    print("notDetermined")
+                    
                 }
             }
             
@@ -278,35 +277,34 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
     
     
     func StartRecording() throws {
-        print("startrecording")
+       
         
         if let recognitionTask = recognitionTask {
             recognitionTask.cancel()
             self.recognitionTask = nil
-            print("printrecognitiontask")
+           
 
         }
-        print(recognitionTask)
-        print("halfway through start recording")
+       
         let audioSession = AVAudioSession.sharedInstance()
         try audioSession.setCategory(AVAudioSessionCategoryRecord)
         try audioSession.setMode(AVAudioSessionModeMeasurement)
         try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
-        print(audioSession)
+      
         recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
-        print(audioSession)
+      
         guard let inputNode = audioEngine.inputNode else { fatalError("Audio engine has no input node") }
         guard let recognitionRequest = recognitionRequest else { fatalError("Unable to create a SfSpeechAudioBufferRecognitionRequest object")}
-        print(audioSession)
+      
         recognitionRequest.shouldReportPartialResults = true
     
         recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { result, error in var isFinal = false
-            print("running recognition task")
+           
             if let result = result {
                 self.textview.text = result.bestTranscription.formattedString
                 isFinal = result.isFinal
-                print(result)
-                print("result")
+                
+                
             }
             
             if error != nil || isFinal {
@@ -319,7 +317,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
                 self.dictatebutton.isEnabled = true
                 self.dictatebutton.setTitle("Start Speaking", for: [])
             }
-           print("recording")
+           
         }
         
         let recordingFormat = inputNode.outputFormat(forBus: 0)
@@ -352,21 +350,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
     
     
     @IBAction func dictateaction(_ sender: UIButton) {
+      
         
-        print("dictatebutton")
         
         if audioEngine.isRunning {
             audioEngine.stop()
             recognitionRequest?.endAudio()
             dictatebutton.isEnabled = false
             dictatebutton.setTitle("Ending...", for: .disabled)
-            print("isrunning")
+            
+            
             
         } else {
         
             try! StartRecording()
             dictatebutton.setTitle("Stop Recording", for: [])
-            print("try")
+            
+            
         }
         
 
