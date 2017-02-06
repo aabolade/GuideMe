@@ -30,7 +30,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
     var locationManager: CLLocationManager!
 
     var lastMessage = "Welcome to Guide Me"
-    
+    var apiService = APIService()
     var speech = Speech()
     
     var vibrate = Vibrate()
@@ -52,6 +52,39 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
         self.distanceReading.text = lastMessage
         self.textToSpeech(string: lastMessage)
         
+        apiService.getLiveDepartures() { (departure) in
+            
+        guard let depart = departure else  {
+         print("The departures are nil")
+         return
+        }
+            
+        guard let arrivalTime = depart.arrivalTime else {
+            print("")
+            return
+        }
+            
+        guard let platformName = depart.platformName else {
+            print("")
+            return
+        }
+            
+        guard let lineName = depart.lineName else {
+            print("")
+            return
+        }
+            
+        guard let destination = depart.destinationName else {
+            print("")
+            return
+        }
+            
+        let trainTime = TrainTime()
+            
+        print("This platform is the \(platformName)")
+        print("The next train to arrive will be the \(lineName) service to \(destination) ")
+        print("This train arrives in \(trainTime.formatArrivalTime(trainTime: arrivalTime)) minutes")
+        }
     }
     
 
