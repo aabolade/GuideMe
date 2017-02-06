@@ -157,8 +157,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
     }
     
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
-        beacons.sorted {$0.accuracy < $1.accuracy}
-        findBeacons(beacons: beacons)
+        var sortedBeacons = beacons.sorted {$0.accuracy < $1.accuracy}
+        findBeacons(beacons: sortedBeacons)
     }
     
     @IBOutlet weak var textView: UILabel!
