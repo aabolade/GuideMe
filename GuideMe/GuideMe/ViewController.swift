@@ -6,18 +6,25 @@
 //  Copyright © 2017 Leke Abolade. All rights reserved.
 //
 
+
 import UIKit
+import Speech
 import CoreLocation
 import AudioToolbox
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecognizerDelegate {
     
-    @IBAction func dictatebutton(_ sender: UIButton) {
-    }
     
+    @IBOutlet weak var dictatebutton: UIButton!
     
     @IBOutlet weak var textview: UITextView!
     
+    
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))!
+    private let audioEngine = AVAudioEngine()
+    
+    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+    private var recognitionTask: SFSpeechRecognitionTask?
     
     
     var locationManager: CLLocationManager!
@@ -32,6 +39,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dictatebutton.isEnabled = false
         
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -192,5 +201,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func DecreaseFontSize(_ sender: UIButton) {
         decreaseFontSize()
     }
+    
+    @IBAction func dictatebutton(_ sender: UIButton) {
+    }
+    
+    
 }
 
