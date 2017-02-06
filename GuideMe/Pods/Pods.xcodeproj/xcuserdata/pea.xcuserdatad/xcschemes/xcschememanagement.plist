@@ -14,9 +14,19 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-GuideMeTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>01CD0E4E4D54022FF34582126BE33C18</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2F5A1E175CC98D9BA88CE6208E82A672</key>
 		<dict>
 			<key>primary</key>
