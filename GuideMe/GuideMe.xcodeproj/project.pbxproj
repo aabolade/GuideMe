@@ -13,7 +13,10 @@
 		082842C31E40F45D00DB36F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082842C11E40F45D00DB36F6 /* LaunchScreen.storyboard */; };
 		084D91A61E4361A200AFC359 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 084D91A51E4361A200AFC359 /* Main.storyboard */; };
 		084D91A91E439FA400AFC359 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 084D91A81E439FA400AFC359 /* beep.wav */; };
-		935528D21E474B96006C3E05 /* Vibrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935528D11E474B96006C3E05 /* Vibrate.swift */; };
+		08F377481E487CF4009A8EAC /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F377471E487CF4009A8EAC /* APIService.swift */; };
+		08F3774A1E487D8D009A8EAC /* Departure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F377491E487D8D009A8EAC /* Departure.swift */; };
+		08F3774C1E487DF0009A8EAC /* TrainTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F3774B1E487DF0009A8EAC /* TrainTime.swift */; };
+		87B865BF7E5799E3B1F767F0 /* Pods_GuideMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C8DBB4AD6C0E199651A44F /* Pods_GuideMe.framework */; };
 		B5ADBF7C1E43631200BC6B9D /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADBF7B1E43631200BC6B9D /* Speech.swift */; };
 		B5ADBF811E43AC1200BC6B9D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADBF801E43AC1200BC6B9D /* SettingsViewController.swift */; };
 		CE5A11671E41FCDC00F7B631 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5A11661E41FCDC00F7B631 /* AVFoundation.framework */; };
@@ -28,10 +31,15 @@
 		082842C41E40F45D00DB36F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		084D91A51E4361A200AFC359 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		084D91A81E439FA400AFC359 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
-		935528D11E474B96006C3E05 /* Vibrate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vibrate.swift; sourceTree = "<group>"; };
+		08F377471E487CF4009A8EAC /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		08F377491E487D8D009A8EAC /* Departure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Departure.swift; sourceTree = "<group>"; };
+		08F3774B1E487DF0009A8EAC /* TrainTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainTime.swift; sourceTree = "<group>"; };
+		1F8207C2D95F178F2375D13C /* Pods-GuideMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuideMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuideMe/Pods-GuideMe.release.xcconfig"; sourceTree = "<group>"; };
+		AAF824FCA5CA7946471D0006 /* Pods-GuideMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuideMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuideMe/Pods-GuideMe.debug.xcconfig"; sourceTree = "<group>"; };
 		B5ADBF7B1E43631200BC6B9D /* Speech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
 		B5ADBF801E43AC1200BC6B9D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CE5A11661E41FCDC00F7B631 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E3C8DBB4AD6C0E199651A44F /* Pods_GuideMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuideMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +48,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE5A11671E41FCDC00F7B631 /* AVFoundation.framework in Frameworks */,
+				87B865BF7E5799E3B1F767F0 /* Pods_GuideMe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +61,7 @@
 				082842B71E40F45D00DB36F6 /* GuideMe */,
 				082842B61E40F45D00DB36F6 /* Products */,
 				CE5A11651E41FCDC00F7B631 /* Frameworks */,
+				10BFA58888CA0AB2F5FCF8E1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,7 +85,9 @@
 				084D91A51E4361A200AFC359 /* Main.storyboard */,
 				B5ADBF801E43AC1200BC6B9D /* SettingsViewController.swift */,
 				B5ADBF7B1E43631200BC6B9D /* Speech.swift */,
-				935528D11E474B96006C3E05 /* Vibrate.swift */,
+				08F377471E487CF4009A8EAC /* APIService.swift */,
+				08F377491E487D8D009A8EAC /* Departure.swift */,
+				08F3774B1E487DF0009A8EAC /* TrainTime.swift */,
 			);
 			path = GuideMe;
 			sourceTree = "<group>";
@@ -88,10 +100,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		10BFA58888CA0AB2F5FCF8E1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AAF824FCA5CA7946471D0006 /* Pods-GuideMe.debug.xcconfig */,
+				1F8207C2D95F178F2375D13C /* Pods-GuideMe.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CE5A11651E41FCDC00F7B631 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				CE5A11661E41FCDC00F7B631 /* AVFoundation.framework */,
+				E3C8DBB4AD6C0E199651A44F /* Pods_GuideMe.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -103,9 +125,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 082842C71E40F45D00DB36F6 /* Build configuration list for PBXNativeTarget "GuideMe" */;
 			buildPhases = (
+				A6F33415790C3BDCCB21EAD4 /* [CP] Check Pods Manifest.lock */,
 				082842B11E40F45D00DB36F6 /* Sources */,
 				082842B21E40F45D00DB36F6 /* Frameworks */,
 				082842B31E40F45D00DB36F6 /* Resources */,
+				5DDFD528425D9A030FBB423F /* [CP] Embed Pods Frameworks */,
+				30719979F2DF59AD96155B8C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -128,8 +153,7 @@
 				TargetAttributes = {
 					082842B41E40F45D00DB36F6 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = G68V5HAL8T;
-
+						DevelopmentTeam = 25Q8384695;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -166,13 +190,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		30719979F2DF59AD96155B8C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuideMe/Pods-GuideMe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DDFD528425D9A030FBB423F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuideMe/Pods-GuideMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6F33415790C3BDCCB21EAD4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		082842B11E40F45D00DB36F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08F3774A1E487D8D009A8EAC /* Departure.swift in Sources */,
 				B5ADBF7C1E43631200BC6B9D /* Speech.swift in Sources */,
-				935528D21E474B96006C3E05 /* Vibrate.swift in Sources */,
+				08F3774C1E487DF0009A8EAC /* TrainTime.swift in Sources */,
+				08F377481E487CF4009A8EAC /* APIService.swift in Sources */,
 				082842BB1E40F45D00DB36F6 /* ViewController.swift in Sources */,
 				082842B91E40F45D00DB36F6 /* AppDelegate.swift in Sources */,
 				B5ADBF811E43AC1200BC6B9D /* SettingsViewController.swift in Sources */,
@@ -214,10 +288,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: ls00222@surrey.ac.uk (9D4ZCY4BQQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ls00222@surrey.ac.uk (9D4ZCY4BQQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: leke_abolade92@hotmail.co.uk (72S92V8XPU)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: leke_abolade92@hotmail.co.uk (72S92V8XPU)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 25Q8384695;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -264,10 +339,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: ls00222@surrey.ac.uk (9D4ZCY4BQQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ls00222@surrey.ac.uk (9D4ZCY4BQQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: leke_abolade92@hotmail.co.uk (72S92V8XPU)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: leke_abolade92@hotmail.co.uk (72S92V8XPU)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 25Q8384695;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -288,15 +364,16 @@
 		};
 		082842C81E40F45D00DB36F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAF824FCA5CA7946471D0006 /* Pods-GuideMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: ls00222@surrey.ac.uk (9D4ZCY4BQQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: leke_abolade92@hotmail.co.uk (72S92V8XPU)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = G68V5HAL8T;
+				DEVELOPMENT_TEAM = 25Q8384695;
 				INFOPLIST_FILE = GuideMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ls00222.GuideMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lekeabolade.GuideMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -304,15 +381,16 @@
 		};
 		082842C91E40F45D00DB36F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F8207C2D95F178F2375D13C /* Pods-GuideMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: ls00222@surrey.ac.uk (9D4ZCY4BQQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: leke_abolade92@hotmail.co.uk (72S92V8XPU)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = G68V5HAL8T;
+				DEVELOPMENT_TEAM = 25Q8384695;
 				INFOPLIST_FILE = GuideMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ls00222.GuideMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lekeabolade.GuideMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
