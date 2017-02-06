@@ -26,13 +26,75 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GuideMe/ViewController.swift"
-            timestampString = "508001498.514201"
+            timestampString = "508070743.103121"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "ViewController"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuideMe.ViewController.speech.getter : GuideMe.Speech"
+                  moduleName = "GuideMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bryonywatson/Documents/projects/week-11/GuideMe/GuideMe/GuideMe/ViewController.swift"
+                  timestampString = "508077522.54108"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuideMe.ViewController.speech.setter : GuideMe.Speech"
+                  moduleName = "GuideMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bryonywatson/Documents/projects/week-11/GuideMe/GuideMe/GuideMe/ViewController.swift"
+                  timestampString = "508077522.547796"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuideMe.ViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; GuideMe.ViewController"
+                  moduleName = "GuideMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bryonywatson/Documents/projects/week-11/GuideMe/GuideMe/GuideMe/ViewController.swift"
+                  timestampString = "508077522.554684"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "528">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GuideMe.ViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;GuideMe.ViewController&gt;"
+                  moduleName = "GuideMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bryonywatson/Documents/projects/week-11/GuideMe/GuideMe/GuideMe/ViewController.swift"
+                  timestampString = "508077522.560577"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "468">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

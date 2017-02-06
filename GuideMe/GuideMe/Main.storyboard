@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Mqc-p2-utq">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,18 +20,18 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guide me" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0eG-h7-O4L">
-                                <rect key="frame" x="26" y="132" width="322" height="504"/>
+                                <rect key="frame" x="30" y="132" width="353" height="573"/>
                                 <accessibility key="accessibilityConfiguration" identifier="message"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbQ-x0-9mm">
-                                <rect key="frame" x="299" y="74" width="50" height="50"/>
+                                <rect key="frame" x="334" y="74" width="50" height="50"/>
                                 <accessibility key="accessibilityConfiguration" identifier="settings"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="KbQ-x0-9mm" secondAttribute="height" multiplier="1:1" id="5aq-ko-3A6"/>
@@ -43,8 +43,8 @@
                                     <segue destination="LVg-Bw-MkR" kind="show" id="xKh-iY-taX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGZ-5c-WfW">
-                                <rect key="frame" x="26" y="20" width="56" height="66"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGZ-5c-WfW">
+                                <rect key="frame" x="30" y="74" width="50" height="50"/>
                                 <accessibility key="accessibilityConfiguration" identifier="information"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7F2-CR-BUq"/>
@@ -53,9 +53,11 @@
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="44"/>
                                 <state key="normal" title="i"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="az9-pv-OEl">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="az9-pv-OEl">
                                 <rect key="frame" x="190" y="70" width="72" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="afZ-8J-6Ab"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="70"/>
                                 <state key="normal" title="+">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -64,9 +66,11 @@
                                     <action selector="IncreaseFontSize:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ItC-eA-Le2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2P-z0-bpj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2P-z0-bpj">
                                 <rect key="frame" x="103" y="59" width="72" height="82"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="cI2-J7-VYv"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="70"/>
                                 <state key="normal" title="-">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -75,37 +79,52 @@
                                     <action selector="DecreaseFontSize:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vQr-ea-ZsE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSm-sQ-qY8">
-                                <rect key="frame" x="165" y="436" width="45" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSm-sQ-qY8">
+                                <rect key="frame" x="169" y="231" width="45" height="30"/>
                                 <state key="normal" title="record"/>
                                 <connections>
-                                    <action selector="dictatebutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KrG-61-WpD"/>
+                                    <action selector="dictateaction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cc0-hq-ddP"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wnY-nY-N3S">
-                                <rect key="frame" x="67" y="489" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="words" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wnY-nY-N3S">
+                                <rect key="frame" x="71" y="510" width="272" height="95"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="95" id="d6K-FQ-m5S"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="az9-pv-OEl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="6" id="3cc-xn-ASN"/>
+                            <constraint firstItem="wnY-nY-N3S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="8Pm-hf-wme"/>
                             <constraint firstItem="0eG-h7-O4L" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="68" id="8bc-iR-zu9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wnY-nY-N3S" secondAttribute="trailing" constant="51" id="C4y-dR-4rv"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0eG-h7-O4L" secondAttribute="bottom" constant="31" id="ENK-mv-N8D"/>
                             <constraint firstItem="BGZ-5c-WfW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="FCK-Qf-UDc"/>
+                            <constraint firstItem="az9-pv-OEl" firstAttribute="leading" secondItem="x2P-z0-bpj" secondAttribute="trailing" constant="15" id="FSe-05-MfP"/>
+                            <constraint firstItem="KbQ-x0-9mm" firstAttribute="leading" secondItem="az9-pv-OEl" secondAttribute="trailing" constant="72" id="J5h-9T-NOL"/>
                             <constraint firstItem="BGZ-5c-WfW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="Mle-t6-SkS"/>
+                            <constraint firstItem="PSm-sQ-qY8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="149" id="TZ2-kT-ZVx"/>
+                            <constraint firstItem="x2P-z0-bpj" firstAttribute="leading" secondItem="BGZ-5c-WfW" secondAttribute="trailing" constant="23" id="WE9-vA-Jfb"/>
+                            <constraint firstItem="x2P-z0-bpj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="59" id="WOW-1H-tCT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0eG-h7-O4L" secondAttribute="trailing" constant="11" id="Wof-bd-ulq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KbQ-x0-9mm" secondAttribute="trailing" constant="10" id="ZWY-Ee-VDa"/>
+                            <constraint firstItem="wnY-nY-N3S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="a1C-Yp-Z9D"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wnY-nY-N3S" secondAttribute="bottom" constant="131" id="jJL-Cc-kzm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wnY-nY-N3S" secondAttribute="trailing" constant="51" id="jzU-ML-3ia"/>
+                            <constraint firstItem="wnY-nY-N3S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="51" id="ml9-7Q-RgL"/>
+                            <constraint firstItem="PSm-sQ-qY8" firstAttribute="top" secondItem="x2P-z0-bpj" secondAttribute="bottom" constant="90" id="pzm-Vm-mju"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wnY-nY-N3S" secondAttribute="trailing" constant="51" id="uN2-g2-FFE"/>
                             <constraint firstItem="0eG-h7-O4L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="uzn-Yd-6To"/>
                             <constraint firstItem="KbQ-x0-9mm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="zdd-lo-XiI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hfd-m3-6m0"/>
                     <connections>
+                        <outlet property="dictatebutton" destination="PSm-sQ-qY8" id="TFw-B9-rNa"/>
                         <outlet property="distanceReading" destination="0eG-h7-O4L" id="8hs-CF-nPX"/>
                         <outlet property="textView" destination="0eG-h7-O4L" id="rxX-8V-wYJ"/>
                         <outlet property="textview" destination="wnY-nY-N3S" id="mPP-H7-auA"/>
@@ -113,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="612" y="71.514242878560722"/>
+            <point key="canvasLocation" x="611.59420289855075" y="70.923913043478265"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="x3h-Fn-4eS">
@@ -124,7 +143,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bCs-K3-OYW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4ka-xM-k9B">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="z0l-bd-FDg">
