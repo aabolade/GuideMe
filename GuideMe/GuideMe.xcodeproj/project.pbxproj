@@ -288,8 +288,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: ls00222@surrey.ac.uk (9D4ZCY4BQQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ls00222@surrey.ac.uk (9D4ZCY4BQQ)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 25Q8384695;
@@ -339,8 +339,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: ls00222@surrey.ac.uk (9D4ZCY4BQQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ls00222@surrey.ac.uk (9D4ZCY4BQQ)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 25Q8384695;
@@ -367,8 +367,8 @@
 			baseConfigurationReference = AAF824FCA5CA7946471D0006 /* Pods-GuideMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: ls00222@surrey.ac.uk (9D4ZCY4BQQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ls00222@surrey.ac.uk (9D4ZCY4BQQ)";
 				DEVELOPMENT_TEAM = G68V5HAL8T;
 				INFOPLIST_FILE = GuideMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
@@ -384,8 +384,8 @@
 			baseConfigurationReference = 1F8207C2D95F178F2375D13C /* Pods-GuideMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: ls00222@surrey.ac.uk (9D4ZCY4BQQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ls00222@surrey.ac.uk (9D4ZCY4BQQ)";
 				DEVELOPMENT_TEAM = G68V5HAL8T;
 				INFOPLIST_FILE = GuideMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
