@@ -12,6 +12,14 @@ import AudioToolbox
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
+    @IBAction func dictatebutton(_ sender: UIButton) {
+    }
+    
+    
+    @IBOutlet weak var textview: UITextView!
+    
+    
+    
     var locationManager: CLLocationManager!
 
     var lastMessage = "Welcome to Guide Me"
