@@ -61,7 +61,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wT8-x0-5Hp"/>
+                                    <action selector="IncreaseFontSize:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ItC-eA-Le2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2P-z0-bpj">
@@ -73,7 +73,6 @@
                                 </state>
                                 <connections>
                                     <action selector="DecreaseFontSize:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vQr-ea-ZsE"/>
-                                    <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mM0-Wo-Sxa"/>
                                 </connections>
                             </button>
                         </subviews>
