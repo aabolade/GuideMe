@@ -23,29 +23,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OPB-X3-YTa">
-                                <rect key="frame" x="58" y="268" width="260" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Destination:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGp-pz-cod">
+                                <rect key="frame" x="61" y="96" width="253" height="39"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd4-t3-Vur">
+                                <rect key="frame" x="54" y="550" width="267" height="46"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="35"/>
+                                <state key="normal" title="Guide Me!" backgroundImage="button_border">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="2Rh-LH-6jI"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="..." borderStyle="bezel" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="30" background="button_border" translatesAutoresizingMaskIntoConstraints="NO" id="OPB-X3-YTa">
+                                <rect key="frame" x="54" y="143" width="267" height="43"/>
+                                <rect key="contentStretch" x="0.25" y="0.0" width="1" height="1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="27"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="OPB-X3-YTa" secondAttribute="trailing" constant="41" id="3Hl-jy-gzc"/>
-                            <constraint firstItem="OPB-X3-YTa" firstAttribute="top" secondItem="yax-eO-I77" secondAttribute="bottom" constant="204" id="8J8-G0-Bcn"/>
-                            <constraint firstItem="OPB-X3-YTa" firstAttribute="centerX" secondItem="4ka-xM-k9B" secondAttribute="centerX" id="Okj-in-crw"/>
-                            <constraint firstItem="bCs-K3-OYW" firstAttribute="top" secondItem="OPB-X3-YTa" secondAttribute="bottom" constant="369" id="XcH-GE-yKc"/>
-                            <constraint firstItem="OPB-X3-YTa" firstAttribute="leading" secondItem="4ka-xM-k9B" secondAttribute="leadingMargin" constant="42" id="gWf-LN-Dve"/>
+                            <constraint firstItem="OPB-X3-YTa" firstAttribute="top" secondItem="yax-eO-I77" secondAttribute="bottom" constant="79" id="5it-Ty-ylg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YGp-pz-cod" secondAttribute="trailing" constant="45" id="7mA-nU-mdu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pd4-t3-Vur" secondAttribute="trailing" constant="38" id="8a9-n8-iYH"/>
+                            <constraint firstItem="bCs-K3-OYW" firstAttribute="top" secondItem="OPB-X3-YTa" secondAttribute="bottom" constant="481" id="Aob-gq-d06"/>
+                            <constraint firstItem="pd4-t3-Vur" firstAttribute="leading" secondItem="4ka-xM-k9B" secondAttribute="leadingMargin" constant="38" id="Kex-mG-hVu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OPB-X3-YTa" secondAttribute="trailing" constant="38" id="Ncx-kE-gWN"/>
+                            <constraint firstItem="pd4-t3-Vur" firstAttribute="top" secondItem="yax-eO-I77" secondAttribute="bottom" constant="486" id="Rdv-tD-5UJ"/>
+                            <constraint firstItem="YGp-pz-cod" firstAttribute="leading" secondItem="4ka-xM-k9B" secondAttribute="leadingMargin" constant="45" id="XQQ-xu-ebe"/>
+                            <constraint firstItem="YGp-pz-cod" firstAttribute="top" secondItem="yax-eO-I77" secondAttribute="bottom" constant="30" id="c2C-2J-6Ap"/>
+                            <constraint firstItem="OPB-X3-YTa" firstAttribute="leading" secondItem="4ka-xM-k9B" secondAttribute="leadingMargin" constant="38" id="gtk-II-vGz"/>
+                            <constraint firstItem="YGp-pz-cod" firstAttribute="centerX" secondItem="4ka-xM-k9B" secondAttribute="centerX" id="gvD-Zw-HRp"/>
+                            <constraint firstItem="bCs-K3-OYW" firstAttribute="top" secondItem="pd4-t3-Vur" secondAttribute="bottom" constant="71" id="xGW-Ft-N20"/>
+                            <constraint firstItem="OPB-X3-YTa" firstAttribute="centerX" secondItem="4ka-xM-k9B" secondAttribute="centerX" id="yLx-u9-vuk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="A3g-xO-wjC">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="uLN-4Y-wvx">
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="aih-nR-e57"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="A3g-xO-wjC"/>
                     <connections>
                         <outlet property="textField" destination="OPB-X3-YTa" id="fIW-lT-pyz"/>
                     </connections>
@@ -66,7 +85,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guide me" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0eG-h7-O4L">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guide Me" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0eG-h7-O4L">
                                 <rect key="frame" x="26" y="132" width="322" height="504"/>
                                 <accessibility key="accessibilityConfiguration" identifier="message"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="50"/>
@@ -132,7 +151,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJH-gA-uU7">
-                                <rect key="frame" x="166" y="182" width="42" height="21"/>
+                                <rect key="frame" x="95" y="182" width="113" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -161,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1214" y="72"/>
+            <point key="canvasLocation" x="1213.5999999999999" y="71.514242878560722"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sm5-jE-b6q">
@@ -183,6 +202,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="button_border" width="400" height="400"/>
         <image name="gear" width="1707" height="1707"/>
     </resources>
 </document>
