@@ -20,11 +20,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
     @IBOutlet weak var textview: UITextView!
     
     
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))!
-    private let audioEngine = AVAudioEngine()
+    let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))!
+    let audioEngine = AVAudioEngine()
     
-    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
-    private var recognitionTask: SFSpeechRecognitionTask?
+    var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+    var recognitionTask: SFSpeechRecognitionTask?
     
     
     var locationManager: CLLocationManager!
@@ -202,7 +202,141 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
         decreaseFontSize()
     }
     
-    @IBAction func dictatebutton(_ sender: UIButton) {
+    
+    
+    
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("authorization")
+        speechRecognizer.delegate = self
+        
+        SFSpeechRecognizer.requestAuthorization { authStatus in
+        
+            OperationQueue.main.addOperation {
+            
+                switch authStatus {
+                case .authorized:
+                    print("authorized")
+                    self.dictatebutton.isEnabled = true
+                    
+                case .denied:
+                    self.dictatebutton.isEnabled = false
+                    self.dictatebutton.setTitle("User denied access to speech recognition.", for: .disabled)
+                    print("denied")
+                    
+                case .restricted:
+                    self.dictatebutton.isEnabled = false
+                    self.dictatebutton.setTitle("Speech recognition restricted on device.", for: .disabled)
+                    print("restricted")
+                    
+                    
+                case .notDetermined:
+                    self.dictatebutton.isEnabled = false
+                    self.dictatebutton.setTitle("Speech recognition not yet authorized.", for: .disabled)
+                    print("notDetermined")
+                }
+            }
+            
+            
+        }
+        
+    }
+    
+    
+    func StartRecording() throws {
+        print("startrecording")
+        
+        if let recognitionTask = recognitionTask {
+            recognitionTask.cancel()
+            self.recognitionTask = nil
+            print("printrecognitiontask")
+
+        }
+        print(recognitionTask)
+        print("halfway through start recording")
+        let audioSession = AVAudioSession.sharedInstance()
+        try audioSession.setCategory(AVAudioSessionCategoryRecord)
+        try audioSession.setMode(AVAudioSessionModeMeasurement)
+        try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
+        print(audioSession)
+        recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
+        print(audioSession)
+        guard let inputNode = audioEngine.inputNode else { fatalError("Audio engine has no input node") }
+        guard let recognitionRequest = recognitionRequest else { fatalError("Unable to create a SfSpeechAudioBufferRecognitionRequest object")}
+        print(audioSession)
+        recognitionRequest.shouldReportPartialResults = true
+    
+        recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { result, error in var isFinal = false
+            print("running recognition task")
+            if let result = result {
+                self.textview.text = result.bestTranscription.formattedString
+                isFinal = result.isFinal
+                print(result)
+                print("result")
+            }
+            
+            if error != nil || isFinal {
+                self.audioEngine.stop()
+                inputNode.removeTap(onBus: 0)
+                
+                self.recognitionRequest = nil
+                self.recognitionTask = nil
+                
+                self.dictatebutton.isEnabled = true
+                self.dictatebutton.setTitle("Start Speaking", for: [])
+            }
+           print("recording")
+        }
+        
+        let recordingFormat = inputNode.outputFormat(forBus: 0)
+        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
+            self.recognitionRequest?.append(buffer)
+        }
+        
+        audioEngine.prepare()
+        
+        try audioEngine.start()
+        
+        textview.text = "I'm listening."
+        
+    }
+    
+    func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
+        if available {
+         
+            dictatebutton.isEnabled = true
+            dictatebutton.setTitle("Start Recording", for: [])
+        } else {
+            dictatebutton.isEnabled = false
+            dictatebutton.setTitle("Recognition not available.", for: .disabled)
+        }
+        
+    }
+
+
+    
+    
+    
+    @IBAction func dictateaction(_ sender: UIButton) {
+        
+        print("dictatebutton")
+        
+        if audioEngine.isRunning {
+            audioEngine.stop()
+            recognitionRequest?.endAudio()
+            dictatebutton.isEnabled = false
+            dictatebutton.setTitle("Ending...", for: .disabled)
+            print("isrunning")
+            
+        } else {
+        
+            try! StartRecording()
+            dictatebutton.setTitle("Stop Recording", for: [])
+            print("try")
+        }
+        
+
     }
     
     

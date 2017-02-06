@@ -83,7 +83,7 @@
                                 <rect key="frame" x="169" y="231" width="45" height="30"/>
                                 <state key="normal" title="record"/>
                                 <connections>
-                                    <action selector="dictatebutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pcm-VO-9Uo"/>
+                                    <action selector="dictateaction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cc0-hq-ddP"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="words" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wnY-nY-N3S">
