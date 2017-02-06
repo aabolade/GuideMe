@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0810"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "082842B41E40F45D00DB36F6"
-               BuildableName = "GuideMe.app"
-               BlueprintName = "GuideMe"
-               ReferencedContainer = "container:GuideMe.xcodeproj">
+               BlueprintIdentifier = "2F5A1E175CC98D9BA88CE6208E82A672"
+               BuildableName = "Pods_GuideMe.framework"
+               BlueprintName = "Pods-GuideMe"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "082842B41E40F45D00DB36F6"
-            BuildableName = "GuideMe.app"
-            BlueprintName = "GuideMe"
-            ReferencedContainer = "container:GuideMe.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -51,23 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "082842B41E40F45D00DB36F6"
-            BuildableName = "GuideMe.app"
-            BlueprintName = "GuideMe"
-            ReferencedContainer = "container:GuideMe.xcodeproj">
+            BlueprintIdentifier = "2F5A1E175CC98D9BA88CE6208E82A672"
+            BuildableName = "Pods_GuideMe.framework"
+            BlueprintName = "Pods-GuideMe"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = ""
-            value = ""
-            isEnabled = "NO">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -77,16 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "082842B41E40F45D00DB36F6"
-            BuildableName = "GuideMe.app"
-            BlueprintName = "GuideMe"
-            ReferencedContainer = "container:GuideMe.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

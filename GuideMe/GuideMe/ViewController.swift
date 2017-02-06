@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Alamofire
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -16,6 +17,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var lastMessage = "Welcome to Guide Me"
     
     var speech = Speech()
+    
+    var apiService = APIService()
     
     @IBOutlet weak var distanceReading: UILabel!
     
@@ -27,10 +30,44 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         
         view.backgroundColor = UIColor.black
-    
         
         self.distanceReading.text = lastMessage
         self.textToSpeech(string: lastMessage)
+        
+        apiService.getLiveDepartures() { (departure) in
+            
+            guard let depart = departure else  {
+                print("The departures are nil")
+                return
+            }
+            
+            guard let arrivalTime = depart.arrivalTime else {
+                print("")
+                return
+            }
+            
+            guard let platformName = depart.platformName else {
+                print("")
+                return
+            }
+            
+            guard let lineName = depart.lineName else {
+                print("")
+                return
+            }
+            
+            guard let destination = depart.destinationName else {
+                print("")
+                return
+            }
+            
+            let trainTime = TrainTime()
+            
+            print("This platform is the \(platformName)")
+            print("The next train to arrive will be the \(lineName) service to \(destination) ")
+            print("This train arrives in \(trainTime.formatArrivalTime(trainTime: arrivalTime)) minutes")
+        }
+        
         
     }
 
@@ -91,6 +128,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func enterFromRoad(beacon: CLBeacon) {
         let number = beacon.minor.intValue
+        if number == 65159 {
+         
+            var text = fromRoad[number]! + "The next"
+        } else {
+            var text = fromRoad[number]!
+        }
         setTextLabelAndSpeak(text: fromRoad[number]!)
     }
     
