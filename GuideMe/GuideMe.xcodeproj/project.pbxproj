@@ -156,8 +156,7 @@
 				TargetAttributes = {
 					082842B41E40F45D00DB36F6 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 25Q8384695;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -373,7 +372,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: leke_abolade92@hotmail.co.uk (72S92V8XPU)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 25Q8384695;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GuideMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -390,7 +389,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: leke_abolade92@hotmail.co.uk (72S92V8XPU)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 25Q8384695;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GuideMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
