@@ -12,6 +12,7 @@ import AudioToolbox
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
+    
     @IBAction func dictatebutton(_ sender: UIButton) {
     }
     
@@ -21,6 +22,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     
     var locationManager: CLLocationManager!
+    var message: String = ""
 
     var lastMessage = "Welcome to Guide Me"
     var apiService = APIService()
@@ -43,39 +45,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.distanceReading.text = lastMessage
         self.textToSpeech(string: lastMessage)
         
-        apiService.getLiveDepartures() { (departure) in
-            
-        guard let depart = departure else  {
-         print("The departures are nil")
-         return
-        }
-            
-        guard let arrivalTime = depart.arrivalTime else {
-            print("")
-            return
-        }
-            
-        guard let platformName = depart.platformName else {
-            print("")
-            return
-        }
-            
-        guard let lineName = depart.lineName else {
-            print("")
-            return
-        }
-            
-        guard let destination = depart.destinationName else {
-            print("")
-            return
-        }
-            
-        let trainTime = TrainTime()
-            
-        print("This platform is the \(platformName)")
-        print("The next train to arrive will be the \(lineName) service to \(destination) ")
-        print("This train arrives in \(trainTime.formatArrivalTime(trainTime: arrivalTime)) minutes")
-        }
     }
     
 
@@ -138,12 +107,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func enterFromRoad(beacon: CLBeacon) {
         let number = beacon.minor.intValue
-        print(number)
+        
+        
         guard let unwrappedMessage = fromRoad[number] else {
             print ("I don't recognise this beacon")
             return
         }
+        
+        
         setTextLabelAndSpeak(text: unwrappedMessage)
+        
+        if number == 65169 {
+            setTextLabelAndSpeak(text: getPlatformMessage())
+        }
     }
     
     func enterFromTrain(beacon: CLBeacon) {
@@ -216,6 +192,50 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
            text?.font = UIFont(name: (text?.font.fontName)!, size: (text?.font.pointSize)! - 10)
         }
 
+    }
+    
+    func getPlatformMessage() -> String {
+        
+        
+        apiService.getLiveDepartures() { (departure) in
+            
+            guard let depart = departure else  {
+                print("The departures are nil")
+                return
+            }
+            
+            guard let arrivalTime = depart.arrivalTime else {
+                print("")
+                return
+            }
+            
+            guard let platformName = depart.platformName else {
+                print("")
+                return
+            }
+            
+            guard let lineName = depart.lineName else {
+                print("")
+                return
+            }
+            
+            guard let destination = depart.destinationName else {
+                print("")
+                return
+            }
+            
+            let trainTime = TrainTime()
+            
+
+            self.message = "The next train to arrive will be the \(lineName) service to \(destination). This train arrives in \(trainTime.formatArrivalTime(trainTime: arrivalTime))"
+            
+        
+            
+        }
+        
+        return self.message
+        
+        
     }
     
     @IBAction func IncreaseFontSize(_ sender: UIButton) {
