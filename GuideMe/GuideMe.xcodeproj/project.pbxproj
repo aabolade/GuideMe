@@ -17,7 +17,6 @@
 		08F3774A1E487D8D009A8EAC /* Departure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F377491E487D8D009A8EAC /* Departure.swift */; };
 		08F3774C1E487DF0009A8EAC /* TrainTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F3774B1E487DF0009A8EAC /* TrainTime.swift */; };
 		87B865BF7E5799E3B1F767F0 /* Pods_GuideMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C8DBB4AD6C0E199651A44F /* Pods_GuideMe.framework */; };
-		8FE647931E48B2B600DAC97F /* GudeMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE647921E48B2B600DAC97F /* GudeMeTests.swift */; };
 		935528E41E489AFA006C3E05 /* Vibrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935528E31E489AFA006C3E05 /* Vibrate.swift */; };
 		B5ADBF7C1E43631200BC6B9D /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADBF7B1E43631200BC6B9D /* Speech.swift */; };
 		B5ADBF811E43AC1200BC6B9D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADBF801E43AC1200BC6B9D /* SettingsViewController.swift */; };
@@ -37,7 +36,7 @@
 		08F377491E487D8D009A8EAC /* Departure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Departure.swift; sourceTree = "<group>"; };
 		08F3774B1E487DF0009A8EAC /* TrainTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainTime.swift; sourceTree = "<group>"; };
 		1F8207C2D95F178F2375D13C /* Pods-GuideMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuideMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuideMe/Pods-GuideMe.release.xcconfig"; sourceTree = "<group>"; };
-		8FE647921E48B2B600DAC97F /* GudeMeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GudeMeTests.swift; sourceTree = "<group>"; };
+		8FE647961E48B5B800DAC97F /* GuideMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideMeTests.swift; sourceTree = "<group>"; };
 		935528E31E489AFA006C3E05 /* Vibrate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vibrate.swift; sourceTree = "<group>"; };
 		AAF824FCA5CA7946471D0006 /* Pods-GuideMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuideMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuideMe/Pods-GuideMe.debug.xcconfig"; sourceTree = "<group>"; };
 		B5ADBF7B1E43631200BC6B9D /* Speech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
@@ -118,7 +117,7 @@
 		8FE647911E48B28800DAC97F /* GuideMeTests */ = {
 			isa = PBXGroup;
 			children = (
-				8FE647921E48B2B600DAC97F /* GudeMeTests.swift */,
+				8FE647961E48B5B800DAC97F /* GuideMeTests.swift */,
 			);
 			name = GuideMeTests;
 			sourceTree = "<group>";
@@ -167,7 +166,6 @@
 				TargetAttributes = {
 					082842B41E40F45D00DB36F6 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 25Q8384695;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -262,7 +260,6 @@
 				08F3774C1E487DF0009A8EAC /* TrainTime.swift in Sources */,
 				08F377481E487CF4009A8EAC /* APIService.swift in Sources */,
 				082842BB1E40F45D00DB36F6 /* ViewController.swift in Sources */,
-				8FE647931E48B2B600DAC97F /* GudeMeTests.swift in Sources */,
 				935528E41E489AFA006C3E05 /* Vibrate.swift in Sources */,
 				082842B91E40F45D00DB36F6 /* AppDelegate.swift in Sources */,
 				B5ADBF811E43AC1200BC6B9D /* SettingsViewController.swift in Sources */,
@@ -385,7 +382,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: leke_abolade92@hotmail.co.uk (72S92V8XPU)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 25Q8384695;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GuideMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -402,7 +399,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: leke_abolade92@hotmail.co.uk (72S92V8XPU)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 25Q8384695;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GuideMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
