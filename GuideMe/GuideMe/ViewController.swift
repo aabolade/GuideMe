@@ -10,27 +10,28 @@ import UIKit
 import CoreLocation
 import AudioToolbox
 
-class ViewController: UIViewController, CLLocationManagerDelegate, SettingsViewControllerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate {
+    
     
     @IBAction func dictatebutton(_ sender: UIButton) {
     }
     
-    
     @IBOutlet weak var textview: UITextView!
     
-    
-    
     var locationManager: CLLocationManager!
-
     var lastMessage = "Welcome to Guide Me"
     var apiService = APIService()
     var speech = Speech()
-    
     var vibrate = Vibrate()
+    var receivedDestination: String = ""
     
     @IBOutlet weak var distanceReading: UILabel!
     
+    @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
+        label.text = receivedDestination
+        
         super.viewDidLoad()
         
         locationManager = CLLocationManager()
@@ -38,7 +39,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SettingsViewC
         locationManager.requestWhenInUseAuthorization()
         
         view.backgroundColor = UIColor.black
-    
         
         self.distanceReading.text = lastMessage
         self.textToSpeech(string: lastMessage)
