@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import AudioToolbox
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, SettingsViewControllerDelegate {
     
     @IBAction func dictatebutton(_ sender: UIButton) {
     }

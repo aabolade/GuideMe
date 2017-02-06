@@ -8,22 +8,26 @@
 
 import UIKit
 
+protocol DataEnteredDelegate: class {
+    func makeChangesToFontSize(size: Int)
+}
+
+
 class SettingsViewController: UIViewController {
     
-    var viewController : ViewController?
+    weak var delegate: DataEnteredDelegate? = nil
     
-    @IBOutlet weak var fontSize: UILabel!
+//    @IBOutlet weak var fontSize: UILabel!
+    
+    
+    @IBAction func increaseFontSize(_ sender: UIButton) {
+        
+        delegate?.makeChangesToFontSize(size: <#T##Int#>)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewController = ViewController()
-        guard let unwrappedController = viewController else {
-            print("View Controller is nil!")
-            return
-        }
-        let text = unwrappedController.distanceReading
-        
-        self.fontSize.text = "\(text?.font.pointSize)!"
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,30 +43,30 @@ class SettingsViewController: UIViewController {
 //        text = UIFont(name: "Courier Bold", size: (text?.pointSize)!+1)!
 //    }
 //    
-    func increaseFontSize () {
-        guard let unwrappedController = viewController else {
-            print("View Controller is nil!")
-            return
-        }
-        let text = unwrappedController.distanceReading
-        text?.font = UIFont(name: (text?.font.fontName)!, size: (text?.font.pointSize)! + 10)
-    }
-    
-    func updateFontSizeNumber() {
-        guard let unwrappedController = viewController else {
-            print("View Controller is nil!")
-            return
-        }
-        let text = unwrappedController.distanceReading
-        
-        self.fontSize.text = "\(text?.font.pointSize)!"
-    }
-    
-    @IBAction func FontButtonTapped(_ sender: UIButton) {
-        increaseFontSize()
-        updateFontSizeNumber()
-    }
-    
+//    func increaseFontSize () {
+//        guard let unwrappedController = viewController else {
+//            print("View Controller is nil!")
+//            return
+//        }
+//        let text = unwrappedController.distanceReading
+//        text?.font = UIFont(name: (text?.font.fontName)!, size: (text?.font.pointSize)! + 10)
+//    }
+//    
+//    func updateFontSizeNumber() {
+//        guard let unwrappedController = viewController else {
+//            print("View Controller is nil!")
+//            return
+//        }
+//        let text = unwrappedController.distanceReading
+//        
+//        self.fontSize.text = "\(text?.font.pointSize)!"
+//    }
+//    
+//    @IBAction func FontButtonTapped(_ sender: UIButton) {
+//        increaseFontSize()
+//        updateFontSizeNumber()
+//    }
+//    
     
 
 
