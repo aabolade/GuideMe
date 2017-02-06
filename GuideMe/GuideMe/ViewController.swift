@@ -8,14 +8,25 @@
 
 import UIKit
 import CoreLocation
+import AudioToolbox
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
+    
+    @IBAction func dictatebutton(_ sender: UIButton) {
+    }
+    
+    
+    @IBOutlet weak var textview: UITextView!
+    
+    
     
     var locationManager: CLLocationManager!
 
     var lastMessage = "Welcome to Guide Me"
     var apiService = APIService()
     var speech = Speech()
+    
+    var vibrate = Vibrate()
     
     @IBOutlet weak var distanceReading: UILabel!
     
@@ -127,14 +138,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func enterFromRoad(beacon: CLBeacon) {
         let number = beacon.minor.intValue
-        setTextLabelAndSpeak(text: fromRoad[number]!)
+        print(number)
+        guard let unwrappedMessage = fromRoad[number] else {
+            print ("I don't recognise this beacon")
+            return
+        }
+        setTextLabelAndSpeak(text: unwrappedMessage)
     }
     
     func enterFromTrain(beacon: CLBeacon) {
         let number = beacon.minor.intValue
-        setTextLabelAndSpeak(text: fromPlatform[number]!)
+        print(number)
+        guard let unwrappedMessage = fromPlatform[number] else {
+            print ("I don't recognise this beacon")
+            return
+        }
+        setTextLabelAndSpeak(text: unwrappedMessage)
     }
+    
     var lastBeacon : Int = 0
+    
     func findBeacons(beacons: [CLBeacon]) {
         if beacons.count > 0 {
             let beacon = beacons[0]
@@ -144,6 +167,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             } else if beacon.minor.intValue > lastBeacon {
                 enterFromRoad(beacon: beacon)
                 lastBeacon = beacon.minor.intValue
+            } else if beacon.minor.intValue == lastBeacon {
+                setTextLabelAndSpeak(text: lastMessage)
+            } else {
+                setTextLabelAndSpeak(text: "I'm a bit confused.")
             }
         } else {
             setTextLabelAndSpeak(text: "There are no beacons in this area")
@@ -184,7 +211,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func decreaseFontSize () {
         let text = self.distanceReading
-        text?.font = UIFont(name: (text?.font.fontName)!, size: (text?.font.pointSize)! - 10)
+        
+        if (Int((text?.font.pointSize)!) > 20) {
+           text?.font = UIFont(name: (text?.font.fontName)!, size: (text?.font.pointSize)! - 10)
+        }
+
     }
     
     @IBAction func IncreaseFontSize(_ sender: UIButton) {
