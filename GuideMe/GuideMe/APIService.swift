@@ -14,8 +14,10 @@ class APIService {
     typealias JSONDictionaryCompletion = (Departure?) -> Void
     
     func getLiveDepartures(_ completion: @escaping JSONDictionaryCompletion) {
-        
+
         Alamofire.request("https://api.tfl.gov.uk/StopPoint/940GZZLUADE/Arrivals").responseJSON { response in
+            
+            print("HElloooooooo")
             
             guard let JSON = response.result.value as? [[String: Any]] else {
                 print("There is no data")

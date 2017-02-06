@@ -32,6 +32,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.distanceReading.text = lastMessage
         self.textToSpeech(string: lastMessage)
         
+        
+        
         apiService.getLiveDepartures() { (departure) in
             
         guard let depart = departure else  {
@@ -63,7 +65,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
         print("This platform is the \(platformName)")
         print("The next train to arrive will be the \(lineName) service to \(destination) ")
-        print("This train arrives in \(trainTime.formatArrivalTime(trainTime: arrivalTime)) minutes")
+        print("This train arrives in \(trainTime.formatArrivalTime(trainTime: arrivalTime))")
         }
     }
     

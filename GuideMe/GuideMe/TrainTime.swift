@@ -25,7 +25,7 @@ class TrainTime {
                 let dateComponentsFormatter = DateComponentsFormatter()
                 dateComponentsFormatter.unitsStyle = DateComponentsFormatter.UnitsStyle.full
         
-               let autoFormattedDifference = dateComponentsFormatter.string(from: trainTimeAsDate!, to: currentDate as Date)
+               let autoFormattedDifference = dateComponentsFormatter.string(from: currentDate, to: trainTimeAsDate!)
         
                 return (autoFormattedDifference?.components(separatedBy: ",").first)!
             
