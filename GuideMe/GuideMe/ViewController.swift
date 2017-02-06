@@ -84,7 +84,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
         }
     }
 
-    
     func startScanning() {
         guard let uuid = UUID(uuidString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D") else {
             print("UUID is nil")
@@ -115,17 +114,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
     func enterFromRoad(beacon: CLBeacon) {
         let number = beacon.minor.intValue
         
-        
         guard let unwrappedMessage = fromRoad[number] else {
             print ("I don't recognise this beacon")
             return
         }
         
-        
-        setTextLabelAndSpeak(text: unwrappedMessage)
-        
-        if number == 65169 {
+        if number == 65159 {
             setTextLabelAndSpeak(text: getPlatformMessage())
+        } else {
+            setTextLabelAndSpeak(text: unwrappedMessage)
         }
     }
     
@@ -136,7 +133,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
             print ("I don't recognise this beacon")
             return
         }
-        setTextLabelAndSpeak(text: unwrappedMessage)
     }
     
     var lastBeacon : Int = 0
@@ -165,7 +161,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
         findBeacons(beacons: beacons)
     }
     
-    
     @IBOutlet weak var textView: UILabel!
 
     
@@ -182,7 +177,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
         }
     }
     
-    
     func textToSpeech(string: String) {
         speech.textToSpeechSettings(string: string)
     }
@@ -198,11 +192,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
         if (Int((text?.font.pointSize)!) > 20) {
            text?.font = UIFont(name: (text?.font.fontName)!, size: (text?.font.pointSize)! - 10)
         }
-
     }
     
     func getPlatformMessage() -> String {
-        
         
         apiService.getLiveDepartures() { (departure) in
             
@@ -233,11 +225,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
             
             let trainTime = TrainTime()
             
-
             self.message = "The next train to arrive will be the \(lineName) service to \(destination). This train arrives in \(trainTime.formatArrivalTime(trainTime: arrivalTime))"
-            
-        
-            
+
         }
         
         return self.message
@@ -321,8 +310,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
             if let result = result {
                 self.textview.text = result.bestTranscription.formattedString
                 isFinal = result.isFinal
-                
-                
             }
             
             if error != nil || isFinal {
@@ -362,34 +349,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
         }
         
     }
-
-
-    
-    
     
     @IBAction func dictateaction(_ sender: UIButton) {
       
-        
-        
         if audioEngine.isRunning {
             audioEngine.stop()
             recognitionRequest?.endAudio()
             dictatebutton.isEnabled = false
             dictatebutton.setTitle("Ending...", for: .disabled)
             
-            
-            
         } else {
         
             try! StartRecording()
             dictatebutton.setTitle("Stop Recording", for: [])
-            
-            
-        }
-        
 
+        }
     }
-    
-    
 }
 
