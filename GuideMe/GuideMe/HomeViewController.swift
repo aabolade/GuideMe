@@ -51,6 +51,7 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate{
         audioEngine.stop()
         recognitionRequest?.endAudio()
         recognitionTask?.cancel()
+
     
     }
     
@@ -108,13 +109,9 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate{
         
         let audioSession = AVAudioSession.sharedInstance()
       
-        try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord, with: [.defaultToSpeaker])
+        try audioSession.setCategory(AVAudioSessionCategoryMultiRoute)
+
         
-        
-        do {
-            try audioSession.overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
-        } catch _ {
-        }
         
         try audioSession.setMode(AVAudioSessionModeMeasurement)
         try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
