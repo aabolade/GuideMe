@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Mqc-p2-utq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Mqc-p2-utq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -125,16 +125,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGZ-5c-WfW">
-                                <rect key="frame" x="26" y="20" width="56" height="66"/>
-                                <accessibility key="accessibilityConfiguration" identifier="information"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="7F2-CR-BUq"/>
-                                    <constraint firstAttribute="width" constant="50" id="7TI-ra-TEb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="44"/>
-                                <state key="normal" title="i"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="az9-pv-OEl">
                                 <rect key="frame" x="190" y="70" width="72" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -160,20 +150,23 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guide Me" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0eG-h7-O4L">
                                 <rect key="frame" x="26" y="132" width="322" height="504"/>
                                 <accessibility key="accessibilityConfiguration" identifier="message"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="0eG-h7-O4L" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="68" id="8bc-iR-zu9"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0eG-h7-O4L" secondAttribute="bottom" constant="31" id="ENK-mv-N8D"/>
-                            <constraint firstItem="BGZ-5c-WfW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="FCK-Qf-UDc"/>
-                            <constraint firstItem="BGZ-5c-WfW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="Mle-t6-SkS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0eG-h7-O4L" secondAttribute="trailing" constant="11" id="Wof-bd-ulq"/>
                             <constraint firstItem="0eG-h7-O4L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="uzn-Yd-6To"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="qVG-ch-4uo" appends="YES" id="jcw-rW-dx3"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="hfd-m3-6m0"/>
                     <connections>
@@ -184,6 +177,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="qVG-ch-4uo">
+                    <connections>
+                        <action selector="tapRepeatsSpeech:" destination="BYZ-38-t0r" id="QxY-YG-S1N"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1213.5999999999999" y="71.514242878560722"/>
         </scene>
