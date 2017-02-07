@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5F584EFC60AA4D13F8B236CF92A8C062EC005482",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5F584EFC60AA4D13F8B236CF92A8C062EC005482" : 9223372036854775807,
+    "DD48374985A523B05E72CF215F07895CE1908725" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "346734AC-E6F3-40C3-B18E-F5E291D2CADA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5F584EFC60AA4D13F8B236CF92A8C062EC005482" : "GuideMe\/",
+    "DD48374985A523B05E72CF215F07895CE1908725" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "GuideMe",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "GuideMe\/GuideMe.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/aabolade\/GuideMe.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5F584EFC60AA4D13F8B236CF92A8C062EC005482"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/bryonywatson1\/oyster_card_challenge.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DD48374985A523B05E72CF215F07895CE1908725"
+    }
+  ]
+}

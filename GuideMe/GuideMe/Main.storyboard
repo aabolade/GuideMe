@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Mqc-p2-utq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Mqc-p2-utq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -44,8 +43,16 @@
                                 <rect key="contentStretch" x="0.25" y="0.0" width="1" height="1"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="27"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="continue" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Puq-S5-Gbr">
+                                <rect key="frame" x="143" y="205" width="67" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Record"/>
+                                <connections>
+                                    <action selector="dictateaction:" destination="LVg-Bw-MkR" eventType="touchUpInside" id="fA5-MJ-IGq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -66,10 +73,27 @@
                     </view>
                     <navigationItem key="navigationItem" id="A3g-xO-wjC"/>
                     <connections>
+                        <outlet property="dictatebutton" destination="Puq-S5-Gbr" id="doE-ZH-rza"/>
                         <outlet property="textField" destination="OPB-X3-YTa" id="fIW-lT-pyz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k44-mp-0ud" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PSm-sQ-qY8">
+                    <rect key="frame" x="0.0" y="0.0" width="45" height="107"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="record"/>
+                    <connections>
+                        <action selector="dictateaction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sq7-Pr-cqF"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="wnY-nY-N3S">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </objects>
             <point key="canvasLocation" x="445.60000000000002" y="71.514242878560722"/>
         </scene>
@@ -85,16 +109,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbQ-x0-9mm">
-                                <rect key="frame" x="299" y="74" width="50" height="50"/>
-                                <accessibility key="accessibilityConfiguration" identifier="settings"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="KbQ-x0-9mm" secondAttribute="height" multiplier="1:1" id="5aq-ko-3A6"/>
-                                    <constraint firstAttribute="height" constant="50" id="P92-k1-NLg"/>
-                                    <constraint firstAttribute="width" constant="50" id="rnB-sq-LkP"/>
-                                </constraints>
-                                <state key="normal" image="gear"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGZ-5c-WfW">
                                 <rect key="frame" x="26" y="20" width="56" height="66"/>
                                 <accessibility key="accessibilityConfiguration" identifier="information"/>
@@ -127,29 +141,6 @@
                                     <action selector="DecreaseFontSize:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vQr-ea-ZsE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSm-sQ-qY8">
-                                <rect key="frame" x="165" y="436" width="45" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="record"/>
-                                <connections>
-                                    <action selector="dictateaction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sq7-Pr-cqF"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wnY-nY-N3S">
-                                <rect key="frame" x="67" y="489" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJH-gA-uU7">
-                                <rect key="frame" x="95" y="182" width="113" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guide Me" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0eG-h7-O4L">
                                 <rect key="frame" x="26" y="132" width="322" height="504"/>
                                 <accessibility key="accessibilityConfiguration" identifier="message"/>
@@ -165,16 +156,13 @@
                             <constraint firstItem="BGZ-5c-WfW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="FCK-Qf-UDc"/>
                             <constraint firstItem="BGZ-5c-WfW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="Mle-t6-SkS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0eG-h7-O4L" secondAttribute="trailing" constant="11" id="Wof-bd-ulq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KbQ-x0-9mm" secondAttribute="trailing" constant="10" id="ZWY-Ee-VDa"/>
                             <constraint firstItem="0eG-h7-O4L" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="uzn-Yd-6To"/>
-                            <constraint firstItem="KbQ-x0-9mm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="zdd-lo-XiI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hfd-m3-6m0"/>
                     <connections>
                         <outlet property="dictatebutton" destination="PSm-sQ-qY8" id="5Za-nr-c3S"/>
                         <outlet property="distanceReading" destination="0eG-h7-O4L" id="8hs-CF-nPX"/>
-                        <outlet property="label" destination="fJH-gA-uU7" id="9S1-eS-Ybl"/>
                         <outlet property="textView" destination="0eG-h7-O4L" id="rxX-8V-wYJ"/>
                         <outlet property="textview" destination="wnY-nY-N3S" id="mPP-H7-auA"/>
                     </connections>
@@ -204,6 +192,5 @@
     </scenes>
     <resources>
         <image name="button_border" width="400" height="400"/>
-        <image name="gear" width="1707" height="1707"/>
     </resources>
 </document>
