@@ -23,6 +23,7 @@
 		935528E41E489AFA006C3E05 /* Vibrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935528E31E489AFA006C3E05 /* Vibrate.swift */; };
 		B5ADBF7C1E43631200BC6B9D /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADBF7B1E43631200BC6B9D /* Speech.swift */; };
 		B5ADBF811E43AC1200BC6B9D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADBF801E43AC1200BC6B9D /* SettingsViewController.swift */; };
+		B5FBDFB11E49E6230023CE55 /* Beacons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FBDFB01E49E6230023CE55 /* Beacons.swift */; };
 		CE5A11671E41FCDC00F7B631 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5A11661E41FCDC00F7B631 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		AAF824FCA5CA7946471D0006 /* Pods-GuideMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuideMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuideMe/Pods-GuideMe.debug.xcconfig"; sourceTree = "<group>"; };
 		B5ADBF7B1E43631200BC6B9D /* Speech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
 		B5ADBF801E43AC1200BC6B9D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B5FBDFB01E49E6230023CE55 /* Beacons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beacons.swift; sourceTree = "<group>"; };
 		CE5A11661E41FCDC00F7B631 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D7FCB0664E97D604B82CC3F2 /* Pods-GuideMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuideMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuideMeTests/Pods-GuideMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		E3C8DBB4AD6C0E199651A44F /* Pods_GuideMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuideMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +141,7 @@
 				08F377491E487D8D009A8EAC /* Departure.swift */,
 				08F3774B1E487DF0009A8EAC /* TrainTime.swift */,
 				935528E31E489AFA006C3E05 /* Vibrate.swift */,
+				B5FBDFB01E49E6230023CE55 /* Beacons.swift */,
 			);
 			path = GuideMe;
 			sourceTree = "<group>";
@@ -264,11 +267,12 @@
 				TargetAttributes = {
 					082842B41E40F45D00DB36F6 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = QYAWHBQW32;
 						ProvisioningStyle = Automatic;
 					};
 					8FE6479F1E48CAED00DAC97F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 25Q8384695;
+						DevelopmentTeam = QYAWHBQW32;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 082842B41E40F45D00DB36F6;
 					};
@@ -433,6 +437,7 @@
 				935528E41E489AFA006C3E05 /* Vibrate.swift in Sources */,
 				082842B91E40F45D00DB36F6 /* AppDelegate.swift in Sources */,
 				B5ADBF811E43AC1200BC6B9D /* SettingsViewController.swift in Sources */,
+				B5FBDFB11E49E6230023CE55 /* Beacons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,11 +505,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: leke_abolade92@hotmail.co.uk (72S92V8XPU)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: leke_abolade92@hotmail.co.uk (72S92V8XPU)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: courtney.lee.osborn@gmail.com (PZXNVE3PR3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: courtney.lee.osborn@gmail.com (PZXNVE3PR3)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 25Q8384695;
+				DEVELOPMENT_TEAM = QYAWHBQW32;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -551,11 +556,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: leke_abolade92@hotmail.co.uk (72S92V8XPU)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: leke_abolade92@hotmail.co.uk (72S92V8XPU)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: courtney.lee.osborn@gmail.com (PZXNVE3PR3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: courtney.lee.osborn@gmail.com (PZXNVE3PR3)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 25Q8384695;
+				DEVELOPMENT_TEAM = QYAWHBQW32;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -581,11 +586,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: leke_abolade92@hotmail.co.uk (72S92V8XPU)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = QYAWHBQW32;
 				INFOPLIST_FILE = GuideMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lekeabolade.GuideMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.courtney.GuideMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -598,11 +603,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: leke_abolade92@hotmail.co.uk (72S92V8XPU)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = QYAWHBQW32;
 				INFOPLIST_FILE = GuideMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lekeabolade.GuideMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.courtney.GuideMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -702,6 +707,7 @@
 				8FE647A91E48CAED00DAC97F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8FE647B51E48CC1500DAC97F /* Build configuration list for PBXNativeTarget "GuideMeTests" */ = {
 			isa = XCConfigurationList;
@@ -710,6 +716,7 @@
 				8FE647B71E48CC1500DAC97F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

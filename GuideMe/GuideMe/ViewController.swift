@@ -25,6 +25,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
     var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     var recognitionTask: SFSpeechRecognitionTask?
     
+    var usingBeacons = UsingBeacons()
     
     var locationManager: CLLocationManager!
     var message: String = ""
@@ -97,70 +98,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
         
     }
     
-    var fromRoad: [Int: String] = [
-        1: "Entering Algate station",
-        41693: "Stairs ahead, go down 56 steps",
-        49281: "Turn Left",
-        65159:"You are now on the Algate platform"
-    ]
-    
-    var fromPlatform: [Int: String] = [
-        65159:  "You are now on the Algate platform",
-        49281:  "Turn Right",
-        41693: "Stairs ahead, go up 56 steps",
-        1: "You are exiting Algate station"
-    ]
-    
-    func enterFromRoad(beacon: CLBeacon) {
-        let number = beacon.minor.intValue
         
-        guard let unwrappedMessage = fromRoad[number] else {
-            print ("I don't recognise this beacon")
-            return
-        }
-        
-        if number == 65159 {
-            setTextLabelAndSpeak(text: getPlatformMessage())
-        } else {
-            setTextLabelAndSpeak(text: unwrappedMessage)
-        }
-    }
-    
-    func enterFromTrain(beacon: CLBeacon) {
-        let number = beacon.minor.intValue
-        print(number)
-        guard let unwrappedMessage = fromPlatform[number] else {
-            print ("I don't recognise this beacon")
-            return
-        }
-    }
-    
-    var lastBeacon : Int = 0
-    
-    func findBeacons(beacons: [CLBeacon]) {
-        if beacons.count > 0 {
-            let beacon = beacons[0]
-            if beacon.minor.intValue < lastBeacon || beacon.minor.intValue == 65159 {
-                enterFromTrain(beacon: beacon)
-                lastBeacon = beacon.minor.intValue
-            } else if beacon.minor.intValue > lastBeacon {
-                enterFromRoad(beacon: beacon)
-                lastBeacon = beacon.minor.intValue
-            } else if beacon.minor.intValue == lastBeacon {
-                setTextLabelAndSpeak(text: lastMessage)
-            } else {
-                setTextLabelAndSpeak(text: "I'm a bit confused.")
-            }
-        } else {
-            setTextLabelAndSpeak(text: "There are no beacons in this area")
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
-        var sortedBeacons = beacons.sorted {$0.accuracy < $1.accuracy}
-        findBeacons(beacons: sortedBeacons)
-    }
-    
     @IBOutlet weak var textView: UILabel!
 
     
@@ -173,13 +111,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
     func onlySpeakOnce() {
         if (self.lastMessage != self.distanceReading.text) {
             speech.playSound()
-            self.textToSpeech(string: self.distanceReading.text!)
+            usingBeacons.textToSpeech(string: self.distanceReading.text!)
         }
     }
     
-    func textToSpeech(string: String) {
-        speech.textToSpeechSettings(string: string)
-    }
     
     func increaseFontSize () {
         let text = self.distanceReading
