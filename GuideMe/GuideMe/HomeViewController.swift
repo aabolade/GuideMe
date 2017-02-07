@@ -48,6 +48,11 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let viewController = segue.destination as! ViewController
         viewController.receivedDestination = textField.text!
+        audioEngine.stop()
+        recognitionRequest?.endAudio()
+        dictatebutton.isEnabled = false
+        recognitionRequest = nil
+        recognitionTask = nil
     }
     
     

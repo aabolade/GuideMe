@@ -1,5 +1,5 @@
 //
-//  Speech.swift
+//  TextToSpeech.swift
 //  GuideMe
 //
 //  Created by Courtney Osborn on 02/02/2017.
@@ -9,13 +9,14 @@
 import Foundation
 import AVFoundation
 
-class Speech {
+class TextToSpeech {
     
     let synth = AVSpeechSynthesizer()
     var myUtterance = AVSpeechUtterance(string: "Guide me has begun scanning")
     var player: AVAudioPlayer?
     
     func textToSpeechSettings(string: String) {
+        print("********** CALLING TEXT TO SPEECH SETTINGS FUNCTION")
         myUtterance = AVSpeechUtterance(string: string)
         myUtterance.rate = 0.4
         myUtterance.volume = 1.0

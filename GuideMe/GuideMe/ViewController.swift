@@ -10,6 +10,7 @@
 import UIKit
 import CoreLocation
 import AudioToolbox
+import Speech
 
 class ViewController: UIViewController, CLLocationManagerDelegate{
     
@@ -19,7 +20,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
 
     var lastMessage = "Welcome to Guide Me"
     var apiService = APIService()
-    var speech = Speech()
+    var speech = TextToSpeech()
     var vibrate = Vibrate()
     var receivedDestination: String = ""
     
@@ -42,6 +43,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         self.distanceReading.text = lastMessage
         self.textToSpeech(string: lastMessage)
+       
         
     }
     
@@ -169,6 +171,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     func textToSpeech(string: String) {
+        print("********** CALLING TEXT TO SPEECH FUNCTION")
         speech.textToSpeechSettings(string: string)
     }
     
