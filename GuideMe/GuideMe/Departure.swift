@@ -8,21 +8,17 @@
 
 import Foundation
 
-
 struct Departure {
     
-        let platformName: String?
-        let lineName: String?
-        let arrivalTime: String?
-        let destinationName: String?
+    let platformName: String?
+    let lineName: String?
+    let arrivalTime: String?
+    let destinationName: String?
     
-    
-        init(departureDictionary: [String: AnyObject]) {
-        
-                    platformName = departureDictionary["platformName"] as? String
-                    lineName = departureDictionary["lineName"] as? String
-                    arrivalTime = departureDictionary["expectedArrival"] as? String
-                   destinationName = departureDictionary["towards"] as? String
-                    
-           }
+    init(departureDictionary: [String: AnyObject]) {
+        platformName = departureDictionary["platformName"] as? String
+        lineName = departureDictionary["lineName"] as? String
+        arrivalTime = departureDictionary["expectedArrival"] as? String
+        destinationName = departureDictionary["towards"] as? String
     }
+}
