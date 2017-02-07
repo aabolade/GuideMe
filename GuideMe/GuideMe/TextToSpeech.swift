@@ -16,7 +16,6 @@ class TextToSpeech {
     var player: AVAudioPlayer?
     
     func textToSpeechSettings(string: String) {
-        print("********** CALLING TEXT TO SPEECH SETTINGS FUNCTION")
         myUtterance = AVSpeechUtterance(string: string)
         myUtterance.rate = 0.4
         myUtterance.volume = 1.0

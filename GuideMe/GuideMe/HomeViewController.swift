@@ -50,9 +50,8 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate{
         viewController.receivedDestination = textField.text!
         audioEngine.stop()
         recognitionRequest?.endAudio()
-        dictatebutton.isEnabled = false
-        recognitionRequest = nil
-        recognitionTask = nil
+        recognitionTask?.cancel()
+    
     }
     
     
@@ -108,7 +107,15 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate{
         }
         
         let audioSession = AVAudioSession.sharedInstance()
-        try audioSession.setCategory(AVAudioSessionCategoryRecord)
+      
+        try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord, with: [.defaultToSpeaker])
+        
+        
+        do {
+            try audioSession.overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
+        } catch _ {
+        }
+        
         try audioSession.setMode(AVAudioSessionModeMeasurement)
         try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
         
