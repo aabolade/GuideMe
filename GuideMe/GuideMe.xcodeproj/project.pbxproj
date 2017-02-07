@@ -22,6 +22,7 @@
 		8FE647A31E48CAED00DAC97F /* GuideMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE647A21E48CAED00DAC97F /* GuideMeUITests.swift */; };
 		8FE647B11E48CC1500DAC97F /* GuideMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE647B01E48CC1500DAC97F /* GuideMeTests.swift */; };
 		935528E41E489AFA006C3E05 /* Vibrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935528E31E489AFA006C3E05 /* Vibrate.swift */; };
+		B5149F8E1E4A3AF40011C4DF /* myTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5149F8D1E4A3AF40011C4DF /* myTest.swift */; };
 		B5ADBF7C1E43631200BC6B9D /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADBF7B1E43631200BC6B9D /* TextToSpeech.swift */; };
 		B5ADBF811E43AC1200BC6B9D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADBF801E43AC1200BC6B9D /* HomeViewController.swift */; };
 		CE5A11671E41FCDC00F7B631 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5A11661E41FCDC00F7B631 /* AVFoundation.framework */; };
@@ -68,6 +69,7 @@
 		8FE647B21E48CC1500DAC97F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		935528E31E489AFA006C3E05 /* Vibrate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vibrate.swift; sourceTree = "<group>"; };
 		AAF824FCA5CA7946471D0006 /* Pods-GuideMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuideMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuideMe/Pods-GuideMe.debug.xcconfig"; sourceTree = "<group>"; };
+		B5149F8D1E4A3AF40011C4DF /* myTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myTest.swift; sourceTree = SOURCE_ROOT; };
 		B5ADBF7B1E43631200BC6B9D /* TextToSpeech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
 		B5ADBF801E43AC1200BC6B9D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE5A11661E41FCDC00F7B631 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -169,6 +171,7 @@
 			children = (
 				8FE647A21E48CAED00DAC97F /* GuideMeUITests.swift */,
 				8FE647A41E48CAED00DAC97F /* Info.plist */,
+				B5149F8D1E4A3AF40011C4DF /* myTest.swift */,
 			);
 			path = GuideMeUITests;
 			sourceTree = "<group>";
@@ -176,8 +179,8 @@
 		8FE647AF1E48CC1500DAC97F /* GuideMeTests */ = {
 			isa = PBXGroup;
 			children = (
-				8FE647B01E48CC1500DAC97F /* GuideMeTests.swift */,
 				8FE647B21E48CC1500DAC97F /* Info.plist */,
+				8FE647B01E48CC1500DAC97F /* GuideMeTests.swift */,
 				8FE09E031E49ED2F0006198F /* TrainTimeTests.swift */,
 			);
 			path = GuideMeTests;
@@ -267,17 +270,18 @@
 				TargetAttributes = {
 					082842B41E40F45D00DB36F6 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = DNSN95MH5R;
+						DevelopmentTeam = QYAWHBQW32;
 						ProvisioningStyle = Automatic;
 					};
 					8FE6479F1E48CAED00DAC97F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 25Q8384695;
+						DevelopmentTeam = QYAWHBQW32;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 082842B41E40F45D00DB36F6;
 					};
 					8FE647AD1E48CC1500DAC97F = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = QYAWHBQW32;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 082842B41E40F45D00DB36F6;
 					};
@@ -445,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FE647A31E48CAED00DAC97F /* GuideMeUITests.swift in Sources */,
+				B5149F8E1E4A3AF40011C4DF /* myTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,13 +589,13 @@
 			baseConfigurationReference = AAF824FCA5CA7946471D0006 /* Pods-GuideMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: leke_abolade92@hotmail.co.uk (72S92V8XPU)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: courtney.lee.osborn@gmail.com (PZXNVE3PR3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = DNSN95MH5R;
+				DEVELOPMENT_TEAM = QYAWHBQW32;
 				INFOPLIST_FILE = GuideMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bryony.GuideMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.court.GuideMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -601,13 +606,13 @@
 			baseConfigurationReference = 1F8207C2D95F178F2375D13C /* Pods-GuideMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: leke_abolade92@hotmail.co.uk (72S92V8XPU)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: courtney.lee.osborn@gmail.com (PZXNVE3PR3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = DNSN95MH5R;
+				DEVELOPMENT_TEAM = QYAWHBQW32;
 				INFOPLIST_FILE = GuideMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bryony.GuideMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.court.GuideMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -617,12 +622,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = QYAWHBQW32;
 				INFOPLIST_FILE = GuideMeUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = M.A..GuideMeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = GuideMe;
 			};
@@ -632,12 +641,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = QYAWHBQW32;
 				INFOPLIST_FILE = GuideMeUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = M.A..GuideMeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = GuideMe;
 			};
@@ -649,8 +662,9 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = QYAWHBQW32;
 				INFOPLIST_FILE = GuideMeTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -667,8 +681,9 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = QYAWHBQW32;
 				INFOPLIST_FILE = GuideMeTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

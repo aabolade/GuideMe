@@ -104,48 +104,99 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         1: "You are exiting Algate station"
     ]
     
-    func enterFromRoad(beacon: CLBeacon) {
-        let number = beacon.minor.intValue
+    func enterFromRoad(beaconNumber: Int) {
         
-        guard let unwrappedMessage = fromRoad[number] else {
+        
+        
+        guard let unwrappedMessage = fromRoad[beaconNumber] else {
+            
             print ("I don't recognise this beacon")
+            
             return
+            
         }
         
-        if number == 65159 {
-            setTextLabelAndSpeak(text: getPlatformMessage())
-        } else {
-            setTextLabelAndSpeak(text: unwrappedMessage)
-        }
+        
+        
+        setTextLabelAndSpeak(text: unwrappedMessage)
+        
+        
+        
     }
     
-    func enterFromTrain(beacon: CLBeacon) {
-        let number = beacon.minor.intValue
-        print(number)
-        guard let unwrappedMessage = fromPlatform[number] else {
+    
+    
+    func enterFromTrain(beaconNumber: Int) {
+        
+        guard let unwrappedMessage = fromPlatform[beaconNumber] else {
+            
             print ("I don't recognise this beacon")
+            
             return
+            
         }
+        
+        
+        
+        if beaconNumber == 65159 {
+            
+            setTextLabelAndSpeak(text: getPlatformMessage())
+            
+        } else {
+            
+            setTextLabelAndSpeak(text: unwrappedMessage)
+            
+        }
+        
     }
+    
+    
     
     var lastBeacon : Int = 0
     
+    
+    
     func findBeacons(beacons: [CLBeacon]) {
+        
         if beacons.count > 0 {
+            
             let beacon = beacons[0]
-            if beacon.minor.intValue < lastBeacon || beacon.minor.intValue == 65159 {
-                enterFromTrain(beacon: beacon)
-                lastBeacon = beacon.minor.intValue
-            } else if beacon.minor.intValue > lastBeacon {
-                enterFromRoad(beacon: beacon)
-                lastBeacon = beacon.minor.intValue
-            } else if beacon.minor.intValue == lastBeacon {
-                setTextLabelAndSpeak(text: lastMessage)
-            } else {
-                setTextLabelAndSpeak(text: "I'm a bit confused.")
-            }
+            
+            let beaconNumber = beacon.minor.intValue
+            
+            giveDirections(beaconNumber: beaconNumber)
+            
         } else {
+            
             setTextLabelAndSpeak(text: "There are no beacons in this area")
+            
+        }
+        
+    }
+    
+    
+    
+    func giveDirections(beaconNumber: Int) {
+        
+        if beaconNumber < lastBeacon || beaconNumber == 65159 {
+            
+            enterFromTrain(beaconNumber: beaconNumber)
+            
+            lastBeacon = beaconNumber
+            
+        } else if beaconNumber > lastBeacon {
+            
+            enterFromRoad(beaconNumber: beaconNumber)
+            
+            lastBeacon = beaconNumber
+            
+        } else if beaconNumber == lastBeacon {
+            
+            setTextLabelAndSpeak(text: lastMessage)
+            
+        } else {
+            
+            setTextLabelAndSpeak(text: "I'm a bit confused.")
         }
     }
     
