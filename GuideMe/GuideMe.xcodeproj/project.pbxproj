@@ -16,12 +16,32 @@
 		08F377481E487CF4009A8EAC /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F377471E487CF4009A8EAC /* APIService.swift */; };
 		08F3774A1E487D8D009A8EAC /* Departure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F377491E487D8D009A8EAC /* Departure.swift */; };
 		08F3774C1E487DF0009A8EAC /* TrainTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F3774B1E487DF0009A8EAC /* TrainTime.swift */; };
+		3F4D027D8043D3EB7B2D3829 /* Pods_GuideMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F609B6AC895AA9BE991D005 /* Pods_GuideMeTests.framework */; };
 		87B865BF7E5799E3B1F767F0 /* Pods_GuideMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C8DBB4AD6C0E199651A44F /* Pods_GuideMe.framework */; };
+		8FE647A31E48CAED00DAC97F /* GuideMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE647A21E48CAED00DAC97F /* GuideMeUITests.swift */; };
+		8FE647B11E48CC1500DAC97F /* GuideMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE647B01E48CC1500DAC97F /* GuideMeTests.swift */; };
 		935528E41E489AFA006C3E05 /* Vibrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935528E31E489AFA006C3E05 /* Vibrate.swift */; };
 		B5ADBF7C1E43631200BC6B9D /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADBF7B1E43631200BC6B9D /* Speech.swift */; };
 		B5ADBF811E43AC1200BC6B9D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADBF801E43AC1200BC6B9D /* SettingsViewController.swift */; };
 		CE5A11671E41FCDC00F7B631 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5A11661E41FCDC00F7B631 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8FE647A51E48CAED00DAC97F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 082842AD1E40F45D00DB36F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 082842B41E40F45D00DB36F6;
+			remoteInfo = GuideMe;
+		};
+		8FE647B31E48CC1500DAC97F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 082842AD1E40F45D00DB36F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 082842B41E40F45D00DB36F6;
+			remoteInfo = GuideMe;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		082842B51E40F45D00DB36F6 /* GuideMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuideMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,11 +56,20 @@
 		08F377491E487D8D009A8EAC /* Departure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Departure.swift; sourceTree = "<group>"; };
 		08F3774B1E487DF0009A8EAC /* TrainTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainTime.swift; sourceTree = "<group>"; };
 		1F8207C2D95F178F2375D13C /* Pods-GuideMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuideMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuideMe/Pods-GuideMe.release.xcconfig"; sourceTree = "<group>"; };
+		2D509E8B5DC2C66AB5481CA1 /* Pods-GuideMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuideMeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuideMeTests/Pods-GuideMeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5F609B6AC895AA9BE991D005 /* Pods_GuideMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuideMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FE647A01E48CAED00DAC97F /* GuideMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuideMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FE647A21E48CAED00DAC97F /* GuideMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideMeUITests.swift; sourceTree = "<group>"; };
+		8FE647A41E48CAED00DAC97F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FE647AE1E48CC1500DAC97F /* GuideMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuideMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FE647B01E48CC1500DAC97F /* GuideMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideMeTests.swift; sourceTree = "<group>"; };
+		8FE647B21E48CC1500DAC97F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		935528E31E489AFA006C3E05 /* Vibrate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vibrate.swift; sourceTree = "<group>"; };
 		AAF824FCA5CA7946471D0006 /* Pods-GuideMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuideMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuideMe/Pods-GuideMe.debug.xcconfig"; sourceTree = "<group>"; };
 		B5ADBF7B1E43631200BC6B9D /* Speech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
 		B5ADBF801E43AC1200BC6B9D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CE5A11661E41FCDC00F7B631 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D7FCB0664E97D604B82CC3F2 /* Pods-GuideMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuideMeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuideMeTests/Pods-GuideMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		E3C8DBB4AD6C0E199651A44F /* Pods_GuideMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuideMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -54,6 +83,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8FE6479D1E48CAED00DAC97F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FE647AB1E48CC1500DAC97F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F4D027D8043D3EB7B2D3829 /* Pods_GuideMeTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -61,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				082842B71E40F45D00DB36F6 /* GuideMe */,
+				8FE647A11E48CAED00DAC97F /* GuideMeUITests */,
+				8FE647AF1E48CC1500DAC97F /* GuideMeTests */,
 				082842B61E40F45D00DB36F6 /* Products */,
 				CE5A11651E41FCDC00F7B631 /* Frameworks */,
 				10BFA58888CA0AB2F5FCF8E1 /* Pods */,
@@ -71,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				082842B51E40F45D00DB36F6 /* GuideMe.app */,
+				8FE647A01E48CAED00DAC97F /* GuideMeUITests.xctest */,
+				8FE647AE1E48CC1500DAC97F /* GuideMeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,8 +156,28 @@
 			children = (
 				AAF824FCA5CA7946471D0006 /* Pods-GuideMe.debug.xcconfig */,
 				1F8207C2D95F178F2375D13C /* Pods-GuideMe.release.xcconfig */,
+				2D509E8B5DC2C66AB5481CA1 /* Pods-GuideMeTests.debug.xcconfig */,
+				D7FCB0664E97D604B82CC3F2 /* Pods-GuideMeTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8FE647A11E48CAED00DAC97F /* GuideMeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8FE647A21E48CAED00DAC97F /* GuideMeUITests.swift */,
+				8FE647A41E48CAED00DAC97F /* Info.plist */,
+			);
+			path = GuideMeUITests;
+			sourceTree = "<group>";
+		};
+		8FE647AF1E48CC1500DAC97F /* GuideMeTests */ = {
+			isa = PBXGroup;
+			children = (
+				8FE647B01E48CC1500DAC97F /* GuideMeTests.swift */,
+				8FE647B21E48CC1500DAC97F /* Info.plist */,
+			);
+			path = GuideMeTests;
 			sourceTree = "<group>";
 		};
 		CE5A11651E41FCDC00F7B631 /* Frameworks */ = {
@@ -117,6 +185,7 @@
 			children = (
 				CE5A11661E41FCDC00F7B631 /* AVFoundation.framework */,
 				E3C8DBB4AD6C0E199651A44F /* Pods_GuideMe.framework */,
+				5F609B6AC895AA9BE991D005 /* Pods_GuideMeTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -144,23 +213,69 @@
 			productReference = 082842B51E40F45D00DB36F6 /* GuideMe.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8FE6479F1E48CAED00DAC97F /* GuideMeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FE647A71E48CAED00DAC97F /* Build configuration list for PBXNativeTarget "GuideMeUITests" */;
+			buildPhases = (
+				8FE6479C1E48CAED00DAC97F /* Sources */,
+				8FE6479D1E48CAED00DAC97F /* Frameworks */,
+				8FE6479E1E48CAED00DAC97F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8FE647A61E48CAED00DAC97F /* PBXTargetDependency */,
+			);
+			name = GuideMeUITests;
+			productName = GuideMeUITests;
+			productReference = 8FE647A01E48CAED00DAC97F /* GuideMeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		8FE647AD1E48CC1500DAC97F /* GuideMeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FE647B51E48CC1500DAC97F /* Build configuration list for PBXNativeTarget "GuideMeTests" */;
+			buildPhases = (
+				48C69C9B4976A53989E2E0A7 /* [CP] Check Pods Manifest.lock */,
+				8FE647AA1E48CC1500DAC97F /* Sources */,
+				8FE647AB1E48CC1500DAC97F /* Frameworks */,
+				8FE647AC1E48CC1500DAC97F /* Resources */,
+				DC83D0A6446067E06A670545 /* [CP] Embed Pods Frameworks */,
+				3BB45FA8B399275895AE8E8C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8FE647B41E48CC1500DAC97F /* PBXTargetDependency */,
+			);
+			name = GuideMeTests;
+			productName = GuideMeTests;
+			productReference = 8FE647AE1E48CC1500DAC97F /* GuideMeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		082842AD1E40F45D00DB36F6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0810;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Leke Abolade";
 				TargetAttributes = {
 					082842B41E40F45D00DB36F6 = {
 						CreatedOnToolsVersion = 8.1;
-
-
-						DevelopmentTeam = 25Q8384695;
-
 						ProvisioningStyle = Automatic;
+					};
+					8FE6479F1E48CAED00DAC97F = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 25Q8384695;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 082842B41E40F45D00DB36F6;
+					};
+					8FE647AD1E48CC1500DAC97F = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 082842B41E40F45D00DB36F6;
 					};
 				};
 			};
@@ -178,6 +293,8 @@
 			projectRoot = "";
 			targets = (
 				082842B41E40F45D00DB36F6 /* GuideMe */,
+				8FE6479F1E48CAED00DAC97F /* GuideMeUITests */,
+				8FE647AD1E48CC1500DAC97F /* GuideMeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -191,6 +308,20 @@
 				084D91A91E439FA400AFC359 /* beep.wav in Resources */,
 				082842C31E40F45D00DB36F6 /* LaunchScreen.storyboard in Resources */,
 				082842C01E40F45D00DB36F6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FE6479E1E48CAED00DAC97F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FE647AC1E48CC1500DAC97F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +341,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuideMe/Pods-GuideMe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3BB45FA8B399275895AE8E8C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuideMeTests/Pods-GuideMeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48C69C9B4976A53989E2E0A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		5DDFD528425D9A030FBB423F /* [CP] Embed Pods Frameworks */ = {
@@ -242,6 +403,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		DC83D0A6446067E06A670545 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuideMeTests/Pods-GuideMeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -260,7 +436,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8FE6479C1E48CAED00DAC97F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FE647A31E48CAED00DAC97F /* GuideMeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FE647AA1E48CC1500DAC97F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FE647B11E48CC1500DAC97F /* GuideMeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8FE647A61E48CAED00DAC97F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 082842B41E40F45D00DB36F6 /* GuideMe */;
+			targetProxy = 8FE647A51E48CAED00DAC97F /* PBXContainerItemProxy */;
+		};
+		8FE647B41E48CC1500DAC97F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 082842B41E40F45D00DB36F6 /* GuideMe */;
+			targetProxy = 8FE647B31E48CC1500DAC97F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		082842C11E40F45D00DB36F6 /* LaunchScreen.storyboard */ = {
@@ -376,14 +581,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: leke_abolade92@hotmail.co.uk (72S92V8XPU)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-
-
-				DEVELOPMENT_TEAM = 25Q8384695;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GuideMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lekeabolade.GuideMe;
-
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -396,16 +598,79 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: leke_abolade92@hotmail.co.uk (72S92V8XPU)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-
-
-				DEVELOPMENT_TEAM = 25Q8384695;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = GuideMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lekeabolade.GuideMe;
-
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		8FE647A81E48CAED00DAC97F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = GuideMeUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = M.A..GuideMeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = GuideMe;
+			};
+			name = Debug;
+		};
+		8FE647A91E48CAED00DAC97F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = GuideMeUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = M.A..GuideMeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = GuideMe;
+			};
+			name = Release;
+		};
+		8FE647B61E48CC1500DAC97F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D509E8B5DC2C66AB5481CA1 /* Pods-GuideMeTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = GuideMeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = M.A..GuideMeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuideMe.app/GuideMe";
+			};
+			name = Debug;
+		};
+		8FE647B71E48CC1500DAC97F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7FCB0664E97D604B82CC3F2 /* Pods-GuideMeTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = GuideMeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = M.A..GuideMeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuideMe.app/GuideMe";
 			};
 			name = Release;
 		};
@@ -429,6 +694,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		8FE647A71E48CAED00DAC97F /* Build configuration list for PBXNativeTarget "GuideMeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FE647A81E48CAED00DAC97F /* Debug */,
+				8FE647A91E48CAED00DAC97F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8FE647B51E48CC1500DAC97F /* Build configuration list for PBXNativeTarget "GuideMeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FE647B61E48CC1500DAC97F /* Debug */,
+				8FE647B71E48CC1500DAC97F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
