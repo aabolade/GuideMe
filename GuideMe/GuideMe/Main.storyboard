@@ -76,7 +76,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GuideMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="GuideMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -85,13 +85,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guide Me" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0eG-h7-O4L">
-                                <rect key="frame" x="26" y="132" width="322" height="504"/>
-                                <accessibility key="accessibilityConfiguration" identifier="message"/>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="50"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbQ-x0-9mm">
                                 <rect key="frame" x="299" y="74" width="50" height="50"/>
                                 <accessibility key="accessibilityConfiguration" identifier="settings"/>
@@ -139,7 +132,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="record"/>
                                 <connections>
-                                    <action selector="dictatebutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KrG-61-WpD"/>
+                                    <action selector="dictateaction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sq7-Pr-cqF"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wnY-nY-N3S">
@@ -154,6 +147,13 @@
                                 <rect key="frame" x="95" y="182" width="113" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guide Me" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0eG-h7-O4L">
+                                <rect key="frame" x="26" y="132" width="322" height="504"/>
+                                <accessibility key="accessibilityConfiguration" identifier="message"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -172,6 +172,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="hfd-m3-6m0"/>
                     <connections>
+                        <outlet property="dictatebutton" destination="PSm-sQ-qY8" id="5Za-nr-c3S"/>
                         <outlet property="distanceReading" destination="0eG-h7-O4L" id="8hs-CF-nPX"/>
                         <outlet property="label" destination="fJH-gA-uU7" id="9S1-eS-Ybl"/>
                         <outlet property="textView" destination="0eG-h7-O4L" id="rxX-8V-wYJ"/>
