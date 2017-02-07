@@ -19,7 +19,7 @@
 		3F4D027D8043D3EB7B2D3829 /* Pods_GuideMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F609B6AC895AA9BE991D005 /* Pods_GuideMeTests.framework */; };
 		87B865BF7E5799E3B1F767F0 /* Pods_GuideMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C8DBB4AD6C0E199651A44F /* Pods_GuideMe.framework */; };
 		8FE09E041E49ED2F0006198F /* TrainTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE09E031E49ED2F0006198F /* TrainTimeTests.swift */; };
-		8FE647A31E48CAED00DAC97F /* GuideMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE647A21E48CAED00DAC97F /* GuideMeUITests.swift */; };
+		8FE09E0D1E4A2D9B0006198F /* GuideMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE09E0C1E4A2D9B0006198F /* GuideMeUITests.swift */; };
 		8FE647B11E48CC1500DAC97F /* GuideMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE647B01E48CC1500DAC97F /* GuideMeTests.swift */; };
 		935528E41E489AFA006C3E05 /* Vibrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935528E31E489AFA006C3E05 /* Vibrate.swift */; };
 		B5ADBF7C1E43631200BC6B9D /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADBF7B1E43631200BC6B9D /* TextToSpeech.swift */; };
@@ -60,8 +60,8 @@
 		2D509E8B5DC2C66AB5481CA1 /* Pods-GuideMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuideMeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuideMeTests/Pods-GuideMeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F609B6AC895AA9BE991D005 /* Pods_GuideMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuideMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE09E031E49ED2F0006198F /* TrainTimeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainTimeTests.swift; sourceTree = "<group>"; };
+		8FE09E0C1E4A2D9B0006198F /* GuideMeUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideMeUITests.swift; sourceTree = "<group>"; };
 		8FE647A01E48CAED00DAC97F /* GuideMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuideMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8FE647A21E48CAED00DAC97F /* GuideMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideMeUITests.swift; sourceTree = "<group>"; };
 		8FE647A41E48CAED00DAC97F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FE647AE1E48CC1500DAC97F /* GuideMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuideMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE647B01E48CC1500DAC97F /* GuideMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideMeTests.swift; sourceTree = "<group>"; };
@@ -167,8 +167,8 @@
 		8FE647A11E48CAED00DAC97F /* GuideMeUITests */ = {
 			isa = PBXGroup;
 			children = (
-				8FE647A21E48CAED00DAC97F /* GuideMeUITests.swift */,
 				8FE647A41E48CAED00DAC97F /* Info.plist */,
+				8FE09E0C1E4A2D9B0006198F /* GuideMeUITests.swift */,
 			);
 			path = GuideMeUITests;
 			sourceTree = "<group>";
@@ -444,7 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FE647A31E48CAED00DAC97F /* GuideMeUITests.swift in Sources */,
+				8FE09E0D1E4A2D9B0006198F /* GuideMeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
