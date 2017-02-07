@@ -1,5 +1,5 @@
 //
-//  Speech.swift
+//  TextToSpeech.swift
 //  GuideMe
 //
 //  Created by Courtney Osborn on 02/02/2017.
@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 
-class Speech {
+class TextToSpeech {
     
     let synth = AVSpeechSynthesizer()
     var myUtterance = AVSpeechUtterance(string: "Guide me has begun scanning")
