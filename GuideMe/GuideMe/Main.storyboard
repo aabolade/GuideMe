@@ -55,6 +55,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="OPB-X3-YTa" firstAttribute="top" secondItem="yax-eO-I77" secondAttribute="bottom" constant="79" id="5it-Ty-ylg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YGp-pz-cod" secondAttribute="trailing" constant="45" id="7mA-nU-mdu"/>
@@ -70,6 +71,9 @@
                             <constraint firstItem="bCs-K3-OYW" firstAttribute="top" secondItem="pd4-t3-Vur" secondAttribute="bottom" constant="71" id="xGW-Ft-N20"/>
                             <constraint firstItem="OPB-X3-YTa" firstAttribute="centerX" secondItem="4ka-xM-k9B" secondAttribute="centerX" id="yLx-u9-vuk"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="wWa-3m-VGJ" appends="YES" id="4nV-RG-Ttw"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="A3g-xO-wjC"/>
                     <connections>
@@ -94,6 +98,11 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <tapGestureRecognizer id="wWa-3m-VGJ">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="LVg-Bw-MkR" id="tE0-mS-Xlg"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="445.60000000000002" y="71.514242878560722"/>
         </scene>

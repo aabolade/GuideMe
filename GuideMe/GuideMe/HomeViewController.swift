@@ -27,6 +27,11 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate{
     var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     var recognitionTask: SFSpeechRecognitionTask?
     
+ 
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+    textFieldShouldReturn(textField: textField)
+        print("HELLO")
+    }
 
     
     @IBOutlet weak var textField: UITextField!
@@ -45,6 +50,11 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate{
         viewController.receivedDestination = textField.text!
     }
     
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true;
+    }
     
     
     override func viewDidAppear(_ animated: Bool) {
