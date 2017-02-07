@@ -8,6 +8,7 @@
 
 import XCTest
 import Alamofire
+import CoreLocation
 @testable import GuideMe
 
 class GuideMeTests: XCTestCase {
@@ -36,10 +37,6 @@ class GuideMeTests: XCTestCase {
     func testFontStyle() {
         let fontStyle = viewController.distanceReading.font.fontName
         XCTAssertEqual(fontStyle, "Courier-Bold")
-    }
-    
-    func testAppScansforBeacons() {
-        
     }
     
     

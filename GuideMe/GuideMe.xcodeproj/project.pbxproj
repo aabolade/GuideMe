@@ -18,6 +18,7 @@
 		08F3774C1E487DF0009A8EAC /* TrainTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F3774B1E487DF0009A8EAC /* TrainTime.swift */; };
 		3F4D027D8043D3EB7B2D3829 /* Pods_GuideMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F609B6AC895AA9BE991D005 /* Pods_GuideMeTests.framework */; };
 		87B865BF7E5799E3B1F767F0 /* Pods_GuideMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C8DBB4AD6C0E199651A44F /* Pods_GuideMe.framework */; };
+		8FE09E041E49ED2F0006198F /* TrainTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE09E031E49ED2F0006198F /* TrainTimeTests.swift */; };
 		8FE647A31E48CAED00DAC97F /* GuideMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE647A21E48CAED00DAC97F /* GuideMeUITests.swift */; };
 		8FE647B11E48CC1500DAC97F /* GuideMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE647B01E48CC1500DAC97F /* GuideMeTests.swift */; };
 		935528E41E489AFA006C3E05 /* Vibrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935528E31E489AFA006C3E05 /* Vibrate.swift */; };
@@ -58,6 +59,7 @@
 		1F8207C2D95F178F2375D13C /* Pods-GuideMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuideMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuideMe/Pods-GuideMe.release.xcconfig"; sourceTree = "<group>"; };
 		2D509E8B5DC2C66AB5481CA1 /* Pods-GuideMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuideMeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuideMeTests/Pods-GuideMeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F609B6AC895AA9BE991D005 /* Pods_GuideMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuideMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FE09E031E49ED2F0006198F /* TrainTimeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainTimeTests.swift; sourceTree = "<group>"; };
 		8FE647A01E48CAED00DAC97F /* GuideMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuideMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE647A21E48CAED00DAC97F /* GuideMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideMeUITests.swift; sourceTree = "<group>"; };
 		8FE647A41E48CAED00DAC97F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			children = (
 				8FE647B01E48CC1500DAC97F /* GuideMeTests.swift */,
 				8FE647B21E48CC1500DAC97F /* Info.plist */,
+				8FE09E031E49ED2F0006198F /* TrainTimeTests.swift */,
 			);
 			path = GuideMeTests;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FE647B11E48CC1500DAC97F /* GuideMeTests.swift in Sources */,
+				8FE09E041E49ED2F0006198F /* TrainTimeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,6 +706,7 @@
 				8FE647A91E48CAED00DAC97F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8FE647B51E48CC1500DAC97F /* Build configuration list for PBXNativeTarget "GuideMeTests" */ = {
 			isa = XCConfigurationList;
@@ -710,6 +715,7 @@
 				8FE647B71E48CC1500DAC97F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
