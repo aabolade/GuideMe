@@ -13,6 +13,9 @@ import AudioToolbox
 class HomeViewController: UIViewController, SFSpeechRecognizerDelegate{
     
     
+    @IBAction func switchTextToSpeech(_ sender: UISwitch) {
+        
+    }
     @IBOutlet weak var dictatebutton: UIButton!
     
 //    @IBOutlet weak var textview: UITextView!
