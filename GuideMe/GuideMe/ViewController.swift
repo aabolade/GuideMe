@@ -32,7 +32,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
     var lastMessage = "Welcome to Guide Me"
     var apiService = APIService()
     var speech = Speech()
-    
+
     var vibrate = Vibrate()
     
     @IBOutlet weak var distanceReading: UILabel!
@@ -276,7 +276,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
                     
                 }
             }
-            
             
         }
         
