@@ -15,6 +15,8 @@
 		084D91A91E439FA400AFC359 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 084D91A81E439FA400AFC359 /* beep.wav */; };
 		B5ADBF7C1E43631200BC6B9D /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADBF7B1E43631200BC6B9D /* Speech.swift */; };
 		B5ADBF811E43AC1200BC6B9D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADBF801E43AC1200BC6B9D /* SettingsViewController.swift */; };
+		B5ADBF831E491FC300BC6B9D /* beepSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADBF821E491FC300BC6B9D /* beepSound.swift */; };
+		B5ADBF891E492A2700BC6B9D /* Beacons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADBF881E492A2700BC6B9D /* Beacons.swift */; };
 		CE5A11671E41FCDC00F7B631 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5A11661E41FCDC00F7B631 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		084D91A81E439FA400AFC359 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
 		B5ADBF7B1E43631200BC6B9D /* Speech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
 		B5ADBF801E43AC1200BC6B9D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B5ADBF821E491FC300BC6B9D /* beepSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = beepSound.swift; sourceTree = "<group>"; };
+		B5ADBF881E492A2700BC6B9D /* Beacons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beacons.swift; sourceTree = "<group>"; };
 		CE5A11661E41FCDC00F7B631 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -73,6 +77,8 @@
 				084D91A51E4361A200AFC359 /* Main.storyboard */,
 				B5ADBF801E43AC1200BC6B9D /* SettingsViewController.swift */,
 				B5ADBF7B1E43631200BC6B9D /* Speech.swift */,
+				B5ADBF821E491FC300BC6B9D /* beepSound.swift */,
+				B5ADBF881E492A2700BC6B9D /* Beacons.swift */,
 			);
 			path = GuideMe;
 			sourceTree = "<group>";
@@ -125,7 +131,7 @@
 				TargetAttributes = {
 					082842B41E40F45D00DB36F6 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = PDELZ2628K;
+						DevelopmentTeam = QYAWHBQW32;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -167,10 +173,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5ADBF831E491FC300BC6B9D /* beepSound.swift in Sources */,
 				B5ADBF7C1E43631200BC6B9D /* Speech.swift in Sources */,
 				082842BB1E40F45D00DB36F6 /* ViewController.swift in Sources */,
 				082842B91E40F45D00DB36F6 /* AppDelegate.swift in Sources */,
 				B5ADBF811E43AC1200BC6B9D /* SettingsViewController.swift in Sources */,
+				B5ADBF891E492A2700BC6B9D /* Beacons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,11 +295,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: peaczek@gmail.com (M82U8TP9K3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = PDELZ2628K;
+				DEVELOPMENT_TEAM = QYAWHBQW32;
 				INFOPLIST_FILE = GuideMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pea.GuideMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.courtney.GuideMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -303,11 +311,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: peaczek@gmail.com (M82U8TP9K3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = PDELZ2628K;
+				DEVELOPMENT_TEAM = QYAWHBQW32;
 				INFOPLIST_FILE = GuideMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pea.GuideMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.courtney.GuideMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
