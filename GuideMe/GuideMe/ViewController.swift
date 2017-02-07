@@ -18,7 +18,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     var locationManager: CLLocationManager!
     var message: String = ""
 
-    var lastMessage = "Welcome to Guide Me"
+    var lastMessage = ""
     var apiService = APIService()
     var speech = TextToSpeech()
     var vibrate = Vibrate()
@@ -37,9 +37,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         locationManager.requestWhenInUseAuthorization()
         
         view.backgroundColor = UIColor.black
-        
-        self.distanceReading.text = "Welcome to Guide Me. You are being guided to: " + receivedDestination
-        self.textToSpeech(string: "Welcome to Guide Me. You are being guided to: " + receivedDestination)
+        self.lastMessage = "Welcome to Guide Me. You are being guided to: " + receivedDestination
+        self.distanceReading.text = lastMessage
+        self.textToSpeech(string: lastMessage)
         
         print(self.textToSpeechOn)
         
@@ -162,9 +162,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     func onlySpeakOnce() {
+        if (self.textToSpeechOn == true){
         if (self.lastMessage != self.distanceReading.text) {
             speech.playSound()
             self.textToSpeech(string: self.distanceReading.text!)
+        }
         }
     }
     
@@ -236,6 +238,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     
+    @IBAction func tapRepeatsSpeech(_ sender: UITapGestureRecognizer) {
+        print("TAPBEINGCALLED")
+        speech.playSound()
+        textToSpeech(string: self.distanceReading.text!)
+    }
     
     
     
