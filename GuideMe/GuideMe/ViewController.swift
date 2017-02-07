@@ -40,7 +40,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, SFSpeechRecog
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dictatebutton.isEnabled = false
+   //     dictatebutton.isEnabled = false
         
         locationManager = CLLocationManager()
         locationManager.delegate = self

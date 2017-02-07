@@ -9,6 +9,10 @@
 import XCTest
 @testable import GuideMe
 
+let trainTime = TrainTime()
+let formatter = trainTime.setUpDateFormatter().dateFormatter
+let componentsFormatter = trainTime.setUpDateFormatter().dateComponentsFormatter
+
 class TrainTimeTests: XCTestCase {
     
     override func setUp() {
@@ -17,16 +21,21 @@ class TrainTimeTests: XCTestCase {
     }
     
     func testStringFormatting() {
-        let trainTime = TrainTime()
+        
         let formattedString = trainTime.formatTimeStringFromAPI(string: "2017-02-07T12:05:19Z")
         XCTAssertEqual(formattedString, "2017-02-07 12:05:19")
     }
     
     func testDateFormatting() {
-        let trainTime = TrainTime()
-        let formatter = trainTime.setUpDateFormatter().dateFormatter
         let formattedDate = trainTime.makeDateFromString(formatter: formatter, string: "2017-02-07 12:05:19")
         XCTAssertTrue((formattedDate as Any) is Date)
+    }
+    
+    func testCalculatingDateDifference() {
+        let from_date = trainTime.makeDateFromString(formatter: formatter, string: "2017-02-07 12:00:00")
+        let to_date = trainTime.makeDateFromString(formatter: formatter, string: "2017-02-07 12:05:00")
+        let difference = trainTime.dateDifferenceString(componentsFormatter: componentsFormatter,from: from_date, to: to_date)
+        XCTAssertEqual(difference, "5 minutes")
     }
     
     override func tearDown() {
