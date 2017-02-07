@@ -12,17 +12,23 @@ import AudioToolbox
 
 class HomeViewController: UIViewController, SFSpeechRecognizerDelegate{
     
+    var textToSpeechOn: Bool = true
+    
     
     @IBAction func switchTextToSpeech(_ sender: UISwitch) {
-        
+        if (sender.isOn == true) {
+            textToSpeechOn = true
+        } else {
+            textToSpeechOn = false
+        }
     }
+    
     @IBOutlet weak var dictatebutton: UIButton!
     
 //    @IBOutlet weak var textview: UITextView!
 //    
 //    
-    
-    
+
     
     let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))!
     let audioEngine = AVAudioEngine()
@@ -51,6 +57,7 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let viewController = segue.destination as! ViewController
         viewController.receivedDestination = textField.text!
+        viewController.textToSpeechOn = self.textToSpeechOn
         audioEngine.stop()
         recognitionRequest?.endAudio()
         recognitionTask?.cancel()

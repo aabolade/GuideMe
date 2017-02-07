@@ -23,17 +23,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     var speech = TextToSpeech()
     var vibrate = Vibrate()
     var receivedDestination: String = ""
+    var textToSpeechOn: Bool = true
     
     @IBOutlet weak var distanceReading: UILabel!
     
 
     
     override func viewDidLoad() {
-       
-        
         super.viewDidLoad()
-        
-        
+    
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -42,7 +40,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         self.distanceReading.text = "Welcome to Guide Me. You are being guided to: " + receivedDestination
         self.textToSpeech(string: "Welcome to Guide Me. You are being guided to: " + receivedDestination)
-       
+        
+        print(self.textToSpeechOn)
         
     }
     
@@ -170,8 +169,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     func textToSpeech(string: String) {
-        print("********** CALLING TEXT TO SPEECH FUNCTION")
-        speech.textToSpeechSettings(string: string)
+        if (self.textToSpeechOn == true) {
+            speech.textToSpeechSettings(string: string)
+        }
     }
     
     func increaseFontSize () {
