@@ -33,7 +33,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         super.viewDidLoad()
         
-       
         
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -41,8 +40,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         view.backgroundColor = UIColor.black
         
-        self.distanceReading.text = lastMessage
-        self.textToSpeech(string: lastMessage)
+        self.distanceReading.text = "Welcome to Guide Me. You are being guided to: " + receivedDestination
+        self.textToSpeech(string: "Welcome to Guide Me. You are being guided to: " + receivedDestination)
        
         
     }
