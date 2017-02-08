@@ -121,7 +121,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         }
         
         if beaconNumber == 65159 {
-            setTextLabelAndSpeak(text: getPlatformMessage())
+            setTextLabelAndSpeak(text: (getPlatformMessage()))
         } else if beaconNumber == 50300 {
             vibrate.vibrateForLeft()
             setTextLabelAndSpeak(text: unwrappedMessage)
@@ -163,14 +163,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     func giveDirections(beaconNumber: Int) {
-        if beaconNumber < lastBeacon || beaconNumber == 65159 {
+        if beaconNumber < lastBeacon || beaconNumber == 65159 && lastMessage == "" {
             enterFromTrain(beaconNumber: beaconNumber)
             lastBeacon = beaconNumber
         } else if beaconNumber > lastBeacon {
             enterFromRoad(beaconNumber: beaconNumber)
             lastBeacon = beaconNumber
         } else if beaconNumber == lastBeacon {
-            setTexgittLabelAndSpeak(text: lastMessage)
+            setTextLabelAndSpeak(text: lastMessage)
         } else {
             setTextLabelAndSpeak(text: "I'm a bit confused.")
         }
@@ -227,22 +227,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             }
             
             guard let arrivalTime = depart.arrivalTime else {
-                print("")
+                print("no arrival time detected")
                 return
             }
             
             guard let platformName = depart.platformName else {
-                print("")
+                print("no platform name detected")
                 return
             }
             
             guard let lineName = depart.lineName else {
-                print("")
+                print("no line name detected")
                 return
             }
             
             guard let destination = depart.destinationName else {
-                print("")
+                print("no destination detected")
                 return
             }
             
