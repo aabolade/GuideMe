@@ -48,39 +48,40 @@ class GuideMeTests: XCTestCase {
     func testReplyFromBeaconMinorFromRoad41693() {
         viewController.giveDirections(beaconNumber: 41693)
         let message = viewController.distanceReading.text
-        XCTAssertEqual(message, "Follow the handrail Left, 180 degrees, go down 13 steps")
+        XCTAssertEqual(message, "Follow the handrail left, 180 degrees, go down 13 steps")
     }
     
 
     func testReplyFromBeaconMinorFromRoad49281() {
         viewController.giveDirections(beaconNumber: 49281)
         let message = viewController.distanceReading.text
-        XCTAssertEqual(message, "You are at the bottom of the stairs, Keep Right against the Wall, walk straight ahead")
+        XCTAssertEqual(message, "You are at the bottom of the stairs, keep right against the wall, walk straight ahead")
     }
     
     func testReplyFromBeaconMinorFromRoad5300() {
         viewController.giveDirections(beaconNumber: 50300)
         let message = viewController.distanceReading.text
-        XCTAssertEqual(message, "Turn Left in 5 steps")
+        XCTAssertEqual(message, "Turn left to approach the ticket barriers")
     }
     
     func testReplyFromBeaconMinorFromRoad5500() {
         viewController.giveDirections(beaconNumber: 50500)
         let message = viewController.distanceReading.text
-        XCTAssertEqual(message, "You are approaching the ticket barriers, ticket machines are on your left, Keep Left for the Wide Gate")
+        XCTAssertEqual(message, "Ticket machines are on your left, keep left for the wide gate")
     }
     
-    func testReplyFromBeaconMinorFromRoad5800() {
+    func testReplyFromBeaconMinorFromRoad50800() {
         viewController.giveDirections(beaconNumber: 50800)
         let message = viewController.distanceReading.text
-        XCTAssertEqual(message, "Turn Right, for westbound platform")
+        XCTAssertEqual(message, "Turn right for Westbound platform")
     }
     
 
     func testReplyFromBeaconMinorFromRoad651659() {
+        viewController.lastBeacon = 41693
         viewController.giveDirections(beaconNumber: 65159)
         let message = viewController.distanceReading.text
-        XCTAssertEqual(message, "You are now on the Algate platform")
+        XCTAssertEqual(message, "You are now on the Westbound platform")
     }
     
 
@@ -95,35 +96,35 @@ class GuideMeTests: XCTestCase {
         viewController.lastBeacon = 49281
         viewController.giveDirections(beaconNumber: 41693)
         let message = viewController.distanceReading.text
-        XCTAssertEqual(message, "Follow the handrail Left, 180 degrees, go up 13 steps")
+        XCTAssertEqual(message, "Follow the handrail left, 180 degrees, go up 13 steps")
     }
     
     func testReplyFromBeaconMinorFromTrain49281() {
         viewController.lastBeacon = 50500
         viewController.giveDirections(beaconNumber: 49281)
         let message = viewController.distanceReading.text
-        XCTAssertEqual(message, "Stairs Ahead, go up 13 steps, handrail on your left")
+        XCTAssertEqual(message, "Stairs ahead, go up 13 steps, handrail on your left")
     }
     
     func testReplyFromBeaconMinorFromTrain50500() {
         viewController.lastBeacon = 50800
         viewController.giveDirections(beaconNumber: 50500)
         let message = viewController.distanceReading.text
-        XCTAssertEqual(message, "You are approaching the ticket barriers, Keep Right for the Wide Gate")
+        XCTAssertEqual(message, "You are approaching the ticket barriers, keep right for the wide gate")
     }
     
     func testReplyFromBeaconMinorFromTrain50800() {
         viewController.lastBeacon = 60000
         viewController.giveDirections(beaconNumber: 50800)
         let message = viewController.distanceReading.text
-        XCTAssertEqual(message, "Turn Right for Commercial Street")
+        XCTAssertEqual(message, "Turn right for Commercial Street")
     }
     
     func testReplyFromBeaconMinorFromTrain60000() {
         viewController.lastBeacon = 65159
         viewController.giveDirections(beaconNumber: 60000)
         let message = viewController.distanceReading.text
-        XCTAssertEqual(message, "Turn Left for WhiteChapel Road")
+        XCTAssertEqual(message, "Turn left for WhiteChapel Road")
     }
   
     
@@ -131,7 +132,7 @@ class GuideMeTests: XCTestCase {
         viewController.lastBeacon = 65159
         viewController.giveDirections(beaconNumber: 65159)
         let message = viewController.distanceReading.text
-        XCTAssertEqual(message, "You are now on the Algate platform")
+        XCTAssertEqual(message, "You are now on the Aldgate platform")
     }
     
     func testReplyFromANoneExistingBeacon8000() {
