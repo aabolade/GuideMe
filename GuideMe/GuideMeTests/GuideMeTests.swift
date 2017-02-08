@@ -39,6 +39,86 @@ class GuideMeTests: XCTestCase {
         XCTAssertEqual(fontStyle, "Courier-Bold")
     }
     
+    func testReplyFromBeaconMinorFromRoad1() {
+        viewController.giveDirections(beaconNumber: 1)
+        let message = viewController.distanceReading.text
+        XCTAssertEqual(message, "Stairs ahead, follow the handrail on the left, go down 13 steps")
+    }
+    
+    func testReplyFromBeaconMinorFromRoad41693() {
+        viewController.giveDirections(beaconNumber: 41693)
+        let message = viewController.distanceReading.text
+        XCTAssertEqual(message, "Follow the handrail Left, 180 degrees, go down 13 steps")
+    }
+    
+
+    func testReplyFromBeaconMinorFromRoad49281() {
+        viewController.giveDirections(beaconNumber: 49281)
+        let message = viewController.distanceReading.text
+        XCTAssertEqual(message, "You are at the bottom of the stairs, Cross to Left Wall, walk straight ahead")
+    }
+    
+    func testReplyFromBeaconMinorFromRoad5300() {
+        viewController.giveDirections(beaconNumber: 50300)
+        let message = viewController.distanceReading.text
+        XCTAssertEqual(message, "Turn Left at the next corner")
+    }
+    
+    func testReplyFromBeaconMinorFromRoad5500() {
+        viewController.giveDirections(beaconNumber: 50500)
+        let message = viewController.distanceReading.text
+        XCTAssertEqual(message, "You are approaching the ticket barriers, Keep Left for the Wide Gate")
+    }
+    
+    func testReplyFromBeaconMinorFromRoad5800() {
+        viewController.giveDirections(beaconNumber: 50800)
+        let message = viewController.distanceReading.text
+        XCTAssertEqual(message, "Turn Right, for westbound platform")
+    }
+    
+
+    func testReplyFromBeaconMinorFromRoad651659() {
+        viewController.giveDirections(beaconNumber: 65159)
+        let message = viewController.distanceReading.text
+        XCTAssertEqual(message, "You are now on the Algate platform")
+    }
+    
+
+    func testReplyFromBeaconMinorFromTrain1() {
+        viewController.lastBeacon = 41693
+        viewController.giveDirections(beaconNumber: 1)
+        let message = viewController.distanceReading.text
+        XCTAssertEqual(message, "You are exiting Algate station")
+    }
+
+    func testReplyFromBeaconMinorFromTrain49281() {
+        viewController.lastBeacon = 65159
+        viewController.giveDirections(beaconNumber: 49281)
+        let message = viewController.distanceReading.text
+        XCTAssertEqual(message, "Turn Right")
+    }
+    
+    func testReplyFromBeaconMinorFromTrain41693() {
+        viewController.lastBeacon = 49281
+        viewController.giveDirections(beaconNumber: 41693)
+        let message = viewController.distanceReading.text
+        XCTAssertEqual(message, "Stairs ahead, go up 56 steps")
+    }
+    
+    func testReplyFromBeaconMinorFromTrain65159() {
+        viewController.lastBeacon = 65159
+        viewController.giveDirections(beaconNumber: 65159)
+        let message = viewController.distanceReading.text
+        XCTAssertEqual(message, "You are now on the Algate platform")
+    }
+    
+    func testReplyFromANoneExistingBeacon8000() {
+        viewController.giveDirections(beaconNumber: 65159)
+        viewController.giveDirections(beaconNumber: 80000)
+        let message = viewController.distanceReading.text
+        XCTAssertEqual(message, "You are now on the Algate platform")
+    }
+    
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
