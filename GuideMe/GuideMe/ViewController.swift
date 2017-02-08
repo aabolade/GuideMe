@@ -97,7 +97,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         50300: "Turn left to approach the ticket barriers",
         50500: "Ticket machines are on your left, keep left for the wide gate",
         50800: "Turn right for Westbound platform",
-        65159: "You are now on the Westbound platform"
+        65159: "You are now on the Westbound platform",
+        66666: "The next train to arrive will be the District service to Wimbledon. This train arrives in 2 minutes"
     ]
 
     var fromPlatform: [Int: String] = [
@@ -164,7 +165,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     func giveDirections(beaconNumber: Int) {
         if beaconNumber < lastBeacon || beaconNumber == 65159 && lastMessage == "" {
-            enterFromTrain(beaconNumber: beaconNumber)
+            enterFromRoad(beaconNumber: beaconNumber)
             lastBeacon = beaconNumber
         } else if beaconNumber > lastBeacon {
             enterFromRoad(beaconNumber: beaconNumber)
