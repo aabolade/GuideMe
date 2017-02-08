@@ -91,9 +91,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     var fromRoad: [Int: String] = [
-        1: "Entering Algate station",
-        41693: "Stairs ahead, go down 56 steps",
+        1: "Entering Algate Station",
+        41693: "Stairs ahead, go down 13 steps",
         49281: "Turn Left",
+        50000: "Stairs ahead, go down 13 steps",
+        50200: "Keep Left, walk straight ahead",
+        50300: "Turn Left at the next corner",
+        50500: "You are approaching the ticket barriers, keep left ",
+        50800: "Turn Right",
+        60000: "Turn Left",
         65159:"You are now on the Algate platform"
     ]
     
@@ -105,97 +111,49 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     ]
     
     func enterFromRoad(beaconNumber: Int) {
-        
-        
-        
+  
         guard let unwrappedMessage = fromRoad[beaconNumber] else {
-            
             print ("I don't recognise this beacon")
-            
             return
-            
         }
-        
-        
-        
-        setTextLabelAndSpeak(text: unwrappedMessage)
-        
-        
-        
+        if beaconNumber == 65159 {
+            setTextLabelAndSpeak(text: getPlatformMessage())
+        } else {
+            setTextLabelAndSpeak(text: unwrappedMessage)
+        }
     }
-    
     
     
     func enterFromTrain(beaconNumber: Int) {
-        
         guard let unwrappedMessage = fromPlatform[beaconNumber] else {
-            
             print ("I don't recognise this beacon")
-            
             return
-            
         }
-        
-        
-        
-        if beaconNumber == 65159 {
-            
-            setTextLabelAndSpeak(text: getPlatformMessage())
-            
-        } else {
-            
-            setTextLabelAndSpeak(text: unwrappedMessage)
-            
-        }
-        
+        setTextLabelAndSpeak(text: unwrappedMessage)
     }
-    
-    
-    
+
     var lastBeacon : Int = 0
-    
-    
-    
+
     func findBeacons(beacons: [CLBeacon]) {
-        
         if beacons.count > 0 {
-            
             let beacon = beacons[0]
-            
             let beaconNumber = beacon.minor.intValue
-            
             giveDirections(beaconNumber: beaconNumber)
-            
         } else {
-            
             setTextLabelAndSpeak(text: "There are no beacons in this area")
-            
         }
-        
     }
-    
-    
     
     func giveDirections(beaconNumber: Int) {
-        
         if beaconNumber < lastBeacon || beaconNumber == 65159 {
-            
             enterFromTrain(beaconNumber: beaconNumber)
-            
             lastBeacon = beaconNumber
-            
         } else if beaconNumber > lastBeacon {
-            
             enterFromRoad(beaconNumber: beaconNumber)
-            
             lastBeacon = beaconNumber
-            
         } else if beaconNumber == lastBeacon {
-            
             setTextLabelAndSpeak(text: lastMessage)
-            
         } else {
-            
             setTextLabelAndSpeak(text: "I'm a bit confused.")
         }
     }

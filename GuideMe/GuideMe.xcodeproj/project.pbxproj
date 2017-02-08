@@ -19,23 +19,14 @@
 		3F4D027D8043D3EB7B2D3829 /* Pods_GuideMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F609B6AC895AA9BE991D005 /* Pods_GuideMeTests.framework */; };
 		87B865BF7E5799E3B1F767F0 /* Pods_GuideMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3C8DBB4AD6C0E199651A44F /* Pods_GuideMe.framework */; };
 		8FE09E041E49ED2F0006198F /* TrainTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE09E031E49ED2F0006198F /* TrainTimeTests.swift */; };
-		8FE647A31E48CAED00DAC97F /* GuideMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE647A21E48CAED00DAC97F /* GuideMeUITests.swift */; };
 		8FE647B11E48CC1500DAC97F /* GuideMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE647B01E48CC1500DAC97F /* GuideMeTests.swift */; };
 		935528E41E489AFA006C3E05 /* Vibrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935528E31E489AFA006C3E05 /* Vibrate.swift */; };
-		B5149F8E1E4A3AF40011C4DF /* myTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5149F8D1E4A3AF40011C4DF /* myTest.swift */; };
 		B5ADBF7C1E43631200BC6B9D /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADBF7B1E43631200BC6B9D /* TextToSpeech.swift */; };
 		B5ADBF811E43AC1200BC6B9D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ADBF801E43AC1200BC6B9D /* HomeViewController.swift */; };
 		CE5A11671E41FCDC00F7B631 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5A11661E41FCDC00F7B631 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8FE647A51E48CAED00DAC97F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 082842AD1E40F45D00DB36F6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 082842B41E40F45D00DB36F6;
-			remoteInfo = GuideMe;
-		};
 		8FE647B31E48CC1500DAC97F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 082842AD1E40F45D00DB36F6 /* Project object */;
@@ -61,15 +52,11 @@
 		2D509E8B5DC2C66AB5481CA1 /* Pods-GuideMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuideMeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuideMeTests/Pods-GuideMeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F609B6AC895AA9BE991D005 /* Pods_GuideMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuideMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE09E031E49ED2F0006198F /* TrainTimeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainTimeTests.swift; sourceTree = "<group>"; };
-		8FE647A01E48CAED00DAC97F /* GuideMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuideMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8FE647A21E48CAED00DAC97F /* GuideMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideMeUITests.swift; sourceTree = "<group>"; };
-		8FE647A41E48CAED00DAC97F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FE647AE1E48CC1500DAC97F /* GuideMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuideMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FE647B01E48CC1500DAC97F /* GuideMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideMeTests.swift; sourceTree = "<group>"; };
 		8FE647B21E48CC1500DAC97F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		935528E31E489AFA006C3E05 /* Vibrate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vibrate.swift; sourceTree = "<group>"; };
 		AAF824FCA5CA7946471D0006 /* Pods-GuideMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuideMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuideMe/Pods-GuideMe.debug.xcconfig"; sourceTree = "<group>"; };
-		B5149F8D1E4A3AF40011C4DF /* myTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myTest.swift; sourceTree = SOURCE_ROOT; };
 		B5ADBF7B1E43631200BC6B9D /* TextToSpeech.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
 		B5ADBF801E43AC1200BC6B9D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE5A11661E41FCDC00F7B631 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -84,13 +71,6 @@
 			files = (
 				CE5A11671E41FCDC00F7B631 /* AVFoundation.framework in Frameworks */,
 				87B865BF7E5799E3B1F767F0 /* Pods_GuideMe.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8FE6479D1E48CAED00DAC97F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				082842B71E40F45D00DB36F6 /* GuideMe */,
-				8FE647A11E48CAED00DAC97F /* GuideMeUITests */,
 				8FE647AF1E48CC1500DAC97F /* GuideMeTests */,
 				082842B61E40F45D00DB36F6 /* Products */,
 				CE5A11651E41FCDC00F7B631 /* Frameworks */,
@@ -121,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				082842B51E40F45D00DB36F6 /* GuideMe.app */,
-				8FE647A01E48CAED00DAC97F /* GuideMeUITests.xctest */,
 				8FE647AE1E48CC1500DAC97F /* GuideMeTests.xctest */,
 			);
 			name = Products;
@@ -164,16 +142,6 @@
 				D7FCB0664E97D604B82CC3F2 /* Pods-GuideMeTests.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		8FE647A11E48CAED00DAC97F /* GuideMeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				8FE647A21E48CAED00DAC97F /* GuideMeUITests.swift */,
-				8FE647A41E48CAED00DAC97F /* Info.plist */,
-				B5149F8D1E4A3AF40011C4DF /* myTest.swift */,
-			);
-			path = GuideMeUITests;
 			sourceTree = "<group>";
 		};
 		8FE647AF1E48CC1500DAC97F /* GuideMeTests */ = {
@@ -219,24 +187,6 @@
 			productReference = 082842B51E40F45D00DB36F6 /* GuideMe.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8FE6479F1E48CAED00DAC97F /* GuideMeUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8FE647A71E48CAED00DAC97F /* Build configuration list for PBXNativeTarget "GuideMeUITests" */;
-			buildPhases = (
-				8FE6479C1E48CAED00DAC97F /* Sources */,
-				8FE6479D1E48CAED00DAC97F /* Frameworks */,
-				8FE6479E1E48CAED00DAC97F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8FE647A61E48CAED00DAC97F /* PBXTargetDependency */,
-			);
-			name = GuideMeUITests;
-			productName = GuideMeUITests;
-			productReference = 8FE647A01E48CAED00DAC97F /* GuideMeUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		8FE647AD1E48CC1500DAC97F /* GuideMeTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8FE647B51E48CC1500DAC97F /* Build configuration list for PBXNativeTarget "GuideMeTests" */;
@@ -273,12 +223,6 @@
 						DevelopmentTeam = QYAWHBQW32;
 						ProvisioningStyle = Automatic;
 					};
-					8FE6479F1E48CAED00DAC97F = {
-						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = QYAWHBQW32;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 082842B41E40F45D00DB36F6;
-					};
 					8FE647AD1E48CC1500DAC97F = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = QYAWHBQW32;
@@ -301,7 +245,6 @@
 			projectRoot = "";
 			targets = (
 				082842B41E40F45D00DB36F6 /* GuideMe */,
-				8FE6479F1E48CAED00DAC97F /* GuideMeUITests */,
 				8FE647AD1E48CC1500DAC97F /* GuideMeTests */,
 			);
 		};
@@ -316,13 +259,6 @@
 				084D91A91E439FA400AFC359 /* beep.wav in Resources */,
 				082842C31E40F45D00DB36F6 /* LaunchScreen.storyboard in Resources */,
 				082842C01E40F45D00DB36F6 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8FE6479E1E48CAED00DAC97F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,15 +380,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8FE6479C1E48CAED00DAC97F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8FE647A31E48CAED00DAC97F /* GuideMeUITests.swift in Sources */,
-				B5149F8E1E4A3AF40011C4DF /* myTest.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8FE647AA1E48CC1500DAC97F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -465,11 +392,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8FE647A61E48CAED00DAC97F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 082842B41E40F45D00DB36F6 /* GuideMe */;
-			targetProxy = 8FE647A51E48CAED00DAC97F /* PBXContainerItemProxy */;
-		};
 		8FE647B41E48CC1500DAC97F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 082842B41E40F45D00DB36F6 /* GuideMe */;
@@ -618,51 +540,13 @@
 			};
 			name = Release;
 		};
-		8FE647A81E48CAED00DAC97F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = QYAWHBQW32;
-				INFOPLIST_FILE = GuideMeUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = M.A..GuideMeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = GuideMe;
-			};
-			name = Debug;
-		};
-		8FE647A91E48CAED00DAC97F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = QYAWHBQW32;
-				INFOPLIST_FILE = GuideMeUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = M.A..GuideMeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = GuideMe;
-			};
-			name = Release;
-		};
 		8FE647B61E48CC1500DAC97F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2D509E8B5DC2C66AB5481CA1 /* Pods-GuideMeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: courtney.lee.osborn@gmail.com (PZXNVE3PR3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = QYAWHBQW32;
 				INFOPLIST_FILE = GuideMeTests/Info.plist;
@@ -681,7 +565,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: courtney.lee.osborn@gmail.com (PZXNVE3PR3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = QYAWHBQW32;
 				INFOPLIST_FILE = GuideMeTests/Info.plist;
@@ -711,15 +595,6 @@
 			buildConfigurations = (
 				082842C81E40F45D00DB36F6 /* Debug */,
 				082842C91E40F45D00DB36F6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8FE647A71E48CAED00DAC97F /* Build configuration list for PBXNativeTarget "GuideMeUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8FE647A81E48CAED00DAC97F /* Debug */,
-				8FE647A91E48CAED00DAC97F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
