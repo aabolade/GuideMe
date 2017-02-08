@@ -163,14 +163,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     func giveDirections(beaconNumber: Int) {
-        if beaconNumber < lastBeacon || beaconNumber == 65159 {
-            enterFromTrain(beaconNumber: beaconNumber)
-            lastBeacon = beaconNumber
-        } else if beaconNumber > lastBeacon {
+        if beaconNumber > lastBeacon {
             enterFromRoad(beaconNumber: beaconNumber)
             lastBeacon = beaconNumber
         } else if beaconNumber == lastBeacon {
-            setTexgittLabelAndSpeak(text: lastMessage)
+            setTextLabelAndSpeak(text: lastMessage)
         } else {
             setTextLabelAndSpeak(text: "I'm a bit confused.")
         }

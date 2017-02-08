@@ -23,7 +23,7 @@ class TextToSpeech {
     }
     
     func playSound() {
-        guard let url = Bundle.main.url(forResource: "beep", withExtension: "wav") else {
+        guard let url = Bundle.main.url(forResource: "messageTone", withExtension: "wav") else {
             print("url is nil")
             return
         }
