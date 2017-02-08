@@ -25,11 +25,6 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate{
     
     @IBOutlet weak var dictatebutton: UIButton!
     
-//    @IBOutlet weak var textview: UITextView!
-//    
-//    
-
-    
     let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))!
     let audioEngine = AVAudioEngine()
     
@@ -44,10 +39,15 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate{
 
     
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var guideMeButton: UIButton!
     
        override func viewDidLoad() {
         super.viewDidLoad()
-         dictatebutton.isEnabled = false
+        dictatebutton.isEnabled = false
+        
+        guideMeButton.layer.cornerRadius = 4;
+        guideMeButton.layer.borderWidth = 2;
+        guideMeButton.layer.borderColor = UIColor.white.cgColor
     }
 
     override func didReceiveMemoryWarning() {
@@ -148,7 +148,7 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate{
                 self.recognitionTask = nil
                 
                 self.dictatebutton.isEnabled = true
-                self.dictatebutton.setTitle("Start Speaking", for: [])
+                self.dictatebutton.setBackgroundImage(UIImage(named: "start.png"), for: UIControlState.normal)
             }
             
         }
@@ -170,7 +170,7 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate{
         if available {
             
             dictatebutton.isEnabled = true
-            dictatebutton.setTitle("Start Recording", for: [])
+            dictatebutton.setBackgroundImage(UIImage(named: "start.png"), for: UIControlState.normal)
         } else {
             dictatebutton.isEnabled = false
             dictatebutton.setTitle("Recognition not available.", for: .disabled)
@@ -184,12 +184,12 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate{
             audioEngine.stop()
             recognitionRequest?.endAudio()
             dictatebutton.isEnabled = false
-            dictatebutton.setTitle("Ending...", for: .disabled)
+            self.dictatebutton.setBackgroundImage(UIImage(named: "start.png"), for: UIControlState.normal)
             
         } else {
             
             try! StartRecording()
-            dictatebutton.setTitle("Stop Recording", for: [])
+           self.dictatebutton.setBackgroundImage(UIImage(named: "stop.png"), for: UIControlState.normal)
             
         }
     }
