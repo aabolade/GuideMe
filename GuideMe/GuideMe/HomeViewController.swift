@@ -14,12 +14,15 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate{
     
     var textToSpeechOn: Bool = true
     
+    @IBOutlet weak var voiceover: UILabel!
     
     @IBAction func switchTextToSpeech(_ sender: UISwitch) {
         if (sender.isOn == true) {
             textToSpeechOn = true
+            self.voiceover.text = "Voiceover:On"
         } else {
             textToSpeechOn = false
+            self.voiceover.text = "Voiceover:Off"
         }
     }
     

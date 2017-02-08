@@ -44,21 +44,28 @@
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="27"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="continue" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gbr-8S-QcU">
-                                <rect key="frame" x="152" y="415" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="switchTextToSpeech:" destination="LVg-Bw-MkR" eventType="valueChanged" id="SKJ-9c-DaP"/>
-                                </connections>
-                            </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Puq-S5-Gbr">
-                                <rect key="frame" x="143" y="205" width="67" height="61"/>
+                                <rect key="frame" x="144" y="205" width="67" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="start"/>
                                 <connections>
                                     <action selector="dictateaction:" destination="LVg-Bw-MkR" eventType="touchUpInside" id="fA5-MJ-IGq"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gbr-8S-QcU">
+                                <rect key="frame" x="153" y="391" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="switchTextToSpeech:" destination="LVg-Bw-MkR" eventType="valueChanged" id="SKJ-9c-DaP"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Voiceover:On" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VqM-1F-uVS">
+                                <rect key="frame" x="46" y="350" width="286" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -86,6 +93,7 @@
                         <outlet property="dictatebutton" destination="Puq-S5-Gbr" id="doE-ZH-rza"/>
                         <outlet property="guideMeButton" destination="pd4-t3-Vur" id="zmO-NY-ORf"/>
                         <outlet property="textField" destination="OPB-X3-YTa" id="fIW-lT-pyz"/>
+                        <outlet property="voiceover" destination="VqM-1F-uVS" id="wqK-jK-Qbx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k44-mp-0ud" userLabel="First Responder" sceneMemberID="firstResponder"/>
