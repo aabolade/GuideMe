@@ -99,6 +99,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         if beaconNumber == 65159 {
             setTextLabelAndSpeak(text: getPlatformMessage())
+        } else if beaconNumber == 50300 {
+            vibrate.vibrateForLeft()
+            setTextLabelAndSpeak(text: unwrappedMessage)
+        } else if beaconNumber == 50800 {
+            vibrate.vibrateForRight()
+            setTextLabelAndSpeak(text: unwrappedMessage)
         } else {
             setTextLabelAndSpeak(text: unwrappedMessage)
         }
@@ -109,7 +115,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             print ("I don't recognise this beacon")
             return
         }
-        setTextLabelAndSpeak(text: unwrappedMessage)
+        
+        if beaconNumber == 50300 {
+            vibrate.vibrateForLeft()
+            setTextLabelAndSpeak(text: unwrappedMessage)
+        } else if beaconNumber == 50800 {
+            vibrate.vibrateForRight()
+            setTextLabelAndSpeak(text: unwrappedMessage)
+        } else {
+            setTextLabelAndSpeak(text: unwrappedMessage)
+        }
     }
     
     var lastBeacon : Int = 0
@@ -125,10 +140,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     func giveDirections(beaconNumber: Int) {
-        if beaconNumber < lastBeacon || beaconNumber == 65159 {
-            enterFromTrain(beaconNumber: beaconNumber)
-            lastBeacon = beaconNumber
-        } else if beaconNumber > lastBeacon {
+        if beaconNumber > lastBeacon {
             enterFromRoad(beaconNumber: beaconNumber)
             lastBeacon = beaconNumber
         } else if beaconNumber == lastBeacon {

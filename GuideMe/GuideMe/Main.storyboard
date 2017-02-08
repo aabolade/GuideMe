@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Mqc-p2-utq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Mqc-p2-utq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Home View Controller-->
         <scene sceneID="x3h-Fn-4eS">
             <objects>
-                <viewController id="LVg-Bw-MkR" customClass="HomeViewController" customModule="GuideMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="LVg-Bw-MkR" customClass="HomeViewController" customModule="GuideMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yax-eO-I77"/>
                         <viewControllerLayoutGuide type="bottom" id="bCs-K3-OYW"/>
@@ -28,38 +28,44 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd4-t3-Vur">
+                            <button opaque="NO" contentMode="scaleAspectFit" restorationIdentifier="guideMe" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd4-t3-Vur">
                                 <rect key="frame" x="54" y="550" width="267" height="46"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="35"/>
-                                <state key="normal" title="Guide Me!" backgroundImage="button_border">
+                                <state key="normal" title="Guide Me!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="2Rh-LH-6jI"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="..." borderStyle="bezel" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="30" background="button_border" translatesAutoresizingMaskIntoConstraints="NO" id="OPB-X3-YTa">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="..." borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="OPB-X3-YTa">
                                 <rect key="frame" x="54" y="143" width="267" height="43"/>
                                 <rect key="contentStretch" x="0.25" y="0.0" width="1" height="1"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="27"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="continue" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Puq-S5-Gbr">
-                                <rect key="frame" x="143" y="205" width="67" height="30"/>
+                                <rect key="frame" x="144" y="205" width="67" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Record"/>
+                                <state key="normal" backgroundImage="start"/>
                                 <connections>
                                     <action selector="dictateaction:" destination="LVg-Bw-MkR" eventType="touchUpInside" id="fA5-MJ-IGq"/>
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gbr-8S-QcU">
-                                <rect key="frame" x="152" y="415" width="51" height="31"/>
+                                <rect key="frame" x="153" y="391" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="switchTextToSpeech:" destination="LVg-Bw-MkR" eventType="valueChanged" id="SKJ-9c-DaP"/>
                                 </connections>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Voiceover:On" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VqM-1F-uVS">
+                                <rect key="frame" x="46" y="350" width="286" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -85,7 +91,9 @@
                     <navigationItem key="navigationItem" id="A3g-xO-wjC"/>
                     <connections>
                         <outlet property="dictatebutton" destination="Puq-S5-Gbr" id="doE-ZH-rza"/>
+                        <outlet property="guideMeButton" destination="pd4-t3-Vur" id="zmO-NY-ORf"/>
                         <outlet property="textField" destination="OPB-X3-YTa" id="fIW-lT-pyz"/>
+                        <outlet property="voiceover" destination="VqM-1F-uVS" id="wqK-jK-Qbx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k44-mp-0ud" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -205,6 +213,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="button_border" width="400" height="400"/>
+        <image name="start" width="187" height="177"/>
     </resources>
 </document>
