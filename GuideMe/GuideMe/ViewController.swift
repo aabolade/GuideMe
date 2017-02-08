@@ -92,23 +92,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     var fromRoad: [Int: String] = [
 
         1: "Stairs ahead, follow the handrail on the left, go down 13 steps",
-        41693: "Follow the handrail Left, 180 degrees, go down 13 steps",
-        49281: "You are at the bottom of the stairs, Keep Right against the Wall, walk straight ahead",
-        50300: "Turn Left in 5 steps",
-        50500: "You are approaching the ticket barriers, ticket machines are on your left, Keep Left for the Wide Gate",
-        50800: "Turn Right, for westbound platform",
-        65159: "You are now on the Westbound Platform"
+        41693: "Follow the handrail left, 180 degrees, go down 13 steps",
+        49281: "You are at the bottom of the stairs, keep right against the wall, walk straight ahead",
+        50300: "Turn left to approach the ticket barriers",
+        50500: "Ticket machines are on your left, keep left for the wide gate",
+        50800: "Turn right for Westbound platform",
+        65159: "You are now on the Westbound platform"
     ]
 
     var fromPlatform: [Int: String] = [
         
-        65159: "You are now on the Algate platform",
-        60000: "Turn Left for WhiteChapel Road",
-        50800: "Turn Right for Commercial Street",
-        50500: "You are approaching the ticket barriers, Keep Right for the Wide Gate",
-        50300: "Keep Right, follow the wall and turn right",
-        49281: "Stairs Ahead, go up 13 steps, handrail on your left",
-        41693: "Follow the handrail Left, 180 degrees, go up 13 steps",
+        65159: "You are now on the Aldgate platform",
+        60000: "Turn left for WhiteChapel Road",
+        50800: "Turn right for Commercial Street",
+        50500: "You are approaching the ticket barriers, keep right for the wide gate",
+        50300: "Keep right, follow the wall and turn right",
+        49281: "Stairs ahead, go up 13 steps, handrail on your left",
+        41693: "Follow the handrail left, 180 degrees, go up 13 steps",
         1: "You are now exiting Algate station"
     ]
 
@@ -122,6 +122,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         if beaconNumber == 65159 {
             setTextLabelAndSpeak(text: getPlatformMessage())
+        } else if beaconNumber == 50300 {
+            vibrate.vibrateForLeft()
+            setTextLabelAndSpeak(text: unwrappedMessage)
+        } else if beaconNumber == 50800 {
+            vibrate.vibrateForRight()
+            setTextLabelAndSpeak(text: unwrappedMessage)
         } else {
             setTextLabelAndSpeak(text: unwrappedMessage)
         }
@@ -132,7 +138,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             print ("I don't recognise this beacon")
             return
         }
-        setTextLabelAndSpeak(text: unwrappedMessage)
+        
+        if beaconNumber == 50300 {
+            vibrate.vibrateForLeft()
+            setTextLabelAndSpeak(text: unwrappedMessage)
+        } else if beaconNumber == 50800 {
+            vibrate.vibrateForRight()
+            setTextLabelAndSpeak(text: unwrappedMessage)
+        } else {
+            setTextLabelAndSpeak(text: unwrappedMessage)
+        }
     }
     
     var lastBeacon : Int = 0
@@ -155,7 +170,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             enterFromRoad(beaconNumber: beaconNumber)
             lastBeacon = beaconNumber
         } else if beaconNumber == lastBeacon {
-            setTextLabelAndSpeak(text: lastMessage)
+            setTexgittLabelAndSpeak(text: lastMessage)
         } else {
             setTextLabelAndSpeak(text: "I'm a bit confused.")
         }
