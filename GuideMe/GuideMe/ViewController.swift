@@ -104,7 +104,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         
         65159:  "You are now on the Algate platform",
         49281:  "Turn Right",
-        41693: "Stairs ahead, go up 56 steps",
+        41693: "Stairs ahead, go up 13 steps",
         1: "You are exiting Algate station"
     ]
 
