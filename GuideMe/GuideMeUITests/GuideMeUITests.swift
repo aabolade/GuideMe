@@ -24,16 +24,22 @@ class GuideMeUITests: XCTestCase {
     }
     
     
-    func testInputLabel() {
+    
+    func testInputTextMovesToNextView() {
         
-        XCUIApplication().otherElements.containing(.navigationBar, identifier:"GuideMe.HomeView").children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.tap()
+        let app = XCUIApplication()
+     
+        let textField = app.otherElements.containing(.navigationBar, identifier:"GuideMe.HomeView").children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .textField).element
+        textField.tap()
+        textField.typeText("wimbledon")
         
-        let element = XCUIApplication().otherElements.containing(.navigationBar, identifier:"GuideMe.HomeView").children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
+        let element = app.otherElements.containing(.navigationBar, identifier:"GuideMe.HomeView").children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
         element.tap()
-        element.tap()
-        element.tap()
-        
-        
+        let guideMeButton = app.buttons["Guide Me!"]
+        guideMeButton.tap()
+        let messageStaticText = app.staticTexts["message"]
+        XCTAssertEqual(messageStaticText.label, "Welcome to Guide Me. You are being guided to: wimbledon")
+    
     }
     
     override func tearDown() {
