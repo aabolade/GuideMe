@@ -18,7 +18,11 @@ struct Departure {
     init(departureDictionary: [String: AnyObject]) {
         platformName = departureDictionary["platformName"] as? String
         lineName = departureDictionary["lineName"] as? String
+        
+        
         arrivalTime = departureDictionary["expectedArrival"] as? String
+        
+        
         destinationName = departureDictionary["towards"] as? String
     }
 }

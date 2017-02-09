@@ -21,21 +21,5 @@ class TextToSpeech {
         myUtterance.volume = 1.0
         synth.speak(myUtterance)
     }
-    
-    func playSound() {
-        guard let url = Bundle.main.url(forResource: "beep", withExtension: "wav") else {
-            print("url is nil")
-            return
-        }
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            guard let player = player else {return}
-            
-            player.prepareToPlay()
-            player.play()
-        } catch let error {
-            print(error.localizedDescription)
-        }
-    }
 
 }

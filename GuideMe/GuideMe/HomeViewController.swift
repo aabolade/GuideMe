@@ -37,7 +37,6 @@ class HomeViewController: UIViewController, SFSpeechRecognizerDelegate{
  
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
     textFieldShouldReturn(textField: textField)
-        print("HELLO")
     }
 
     
