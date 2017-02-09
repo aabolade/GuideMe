@@ -38,8 +38,18 @@ class GuideMeUITests: XCTestCase {
         let guideMeButton = app.buttons["Guide Me!"]
         guideMeButton.tap()
         let messageStaticText = app.staticTexts["message"]
-        XCTAssertEqual(messageStaticText.label, "Welcome to Guide Me. You are being guided to: wimbledon")
+        XCTAssertEqual(messageStaticText.label, "Welcome to Guide Me. You are being guided to wimbledon")
     
+    }
+    
+    func testNoDestinationMessage() {
+        let app = XCUIApplication()
+        let element = app.otherElements.containing(.navigationBar, identifier:"GuideMe.HomeView").children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
+        element.tap()
+        let guideMeButton = app.buttons["Guide Me!"]
+        guideMeButton.tap()
+        let messageStaticText = app.staticTexts["message"]
+        XCTAssertEqual(messageStaticText.label, "Welcome to Guide Me")
     }
     
     override func tearDown() {

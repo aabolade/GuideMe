@@ -16,14 +16,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     
     var locationManager: CLLocationManager!
-    var message: String = ""
 
     var lastMessage = ""
-    var apiService = APIService()
-    var speech = TextToSpeech()
-    var vibrate = Vibrate()
+    var platformMessage: String = ""
+    var destinationMessage: String = ""
+    let apiService = APIService()
+    let speech = TextToSpeech()
+    let vibrate = Vibrate()
+    let beepMessage = MessageBeep()
     var receivedDestination: String = ""
     var textToSpeechOn: Bool = true
+    var lastBeacon : Int = 0
+    let beaconDirections = BeaconDirections()
     
     @IBOutlet weak var distanceReading: UILabel!
     
@@ -37,12 +41,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         locationManager.requestWhenInUseAuthorization()
         
         view.backgroundColor = UIColor.black
-        self.lastMessage = "Welcome to Guide Me. You are being guided to: " + receivedDestination
-        self.distanceReading.text = lastMessage
-        self.textToSpeech(string: lastMessage)
         
-        print(self.textToSpeechOn)
-        
+        if receivedDestination == "..." || receivedDestination == "" {
+            self.destinationMessage = "Welcome to Guide Me"
+        } else {
+            self.destinationMessage = "Welcome to Guide Me. You are being guided to " + receivedDestination
+        }
+        self.distanceReading.text = destinationMessage
+        self.textToSpeech(string: destinationMessage)
     }
     
 
@@ -50,13 +56,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
         super.didReceiveMemoryWarning()
     }
     
-    
-    
+    // MARK: Location Manager Setup
+
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         whenInUse(status: status)
     }
 
-    
     func whenInUse(status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
             montoringAvailable()
@@ -74,6 +79,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             startScanning()
         }
     }
+    
+    // MARK: Beacon Scanning
 
     func startScanning() {
         
@@ -89,39 +96,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
  
     }
     
-    var fromRoad: [Int: String] = [
-
-        1: "Stairs ahead, follow the handrail on the left, go down 13 steps",
-        41693: "Follow the handrail left, 180 degrees, go down 13 steps",
-        49281: "You are at the bottom of the stairs, keep right against the wall, walk straight ahead",
-        50300: "Turn left to approach the ticket barriers",
-        50500: "Ticket machines are on your left, keep left for the wide gate",
-        50800: "Turn right for Westbound platform",
-        65159: "You are now on the Westbound platform"
-    ]
-
-    var fromPlatform: [Int: String] = [
-        
-        65159: "You are now on the Aldgate platform",
-        60000: "Turn left for WhiteChapel Road",
-        50800: "Turn right for Commercial Street",
-        50500: "You are approaching the ticket barriers, keep right for the wide gate",
-        50300: "Keep right, follow the wall and turn right",
-        49281: "Stairs ahead, go up 13 steps, handrail on your left",
-        41693: "Follow the handrail left, 180 degrees, go up 13 steps",
-        1: "You are now exiting Algate station"
-    ]
-
-    
     func enterFromRoad(beaconNumber: Int) {
 
-        guard let unwrappedMessage = fromRoad[beaconNumber] else {
+        guard let unwrappedMessage = beaconDirections.fromRoad[beaconNumber] else {
             print ("I don't recognise this beacon")
             return
         }
         
         if beaconNumber == 65159 {
-            setTextLabelAndSpeak(text: (getPlatformMessage()))
+            setTextLabelAndSpeak(text: (unwrappedMessage + getPlatformMessage()))
         } else if beaconNumber == 50300 {
             vibrate.vibrateForLeft()
             setTextLabelAndSpeak(text: unwrappedMessage)
@@ -134,11 +117,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     func enterFromTrain(beaconNumber: Int) {
-        guard let unwrappedMessage = fromPlatform[beaconNumber] else {
+        guard let unwrappedMessage = beaconDirections.fromPlatform[beaconNumber] else {
             print ("I don't recognise this beacon")
             return
         }
-        
         if beaconNumber == 50300 {
             vibrate.vibrateForLeft()
             setTextLabelAndSpeak(text: unwrappedMessage)
@@ -149,8 +131,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             setTextLabelAndSpeak(text: unwrappedMessage)
         }
     }
-    
-    var lastBeacon : Int = 0
     
     func findBeacons(beacons: [CLBeacon]) {
         if beacons.count > 0 {
@@ -192,7 +172,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     func onlySpeakOnce() {
         if (self.textToSpeechOn == true){
         if (self.lastMessage != self.distanceReading.text) {
-            speech.playSound()
+            beepMessage.playSound()
             self.textToSpeech(string: self.distanceReading.text!)
         }
         }
@@ -248,11 +228,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
             
             let trainTime = TrainTime()
             
-            self.message = "The next train to arrive will be the \(lineName) service to \(destination). This train arrives in \(trainTime.formatArrivalTime(trainTime: arrivalTime))"
+            self.platformMessage = "The next train to arrive will be the \(lineName) service to \(destination). This train arrives in \(trainTime.formatArrivalTime(trainTime: arrivalTime))"
 
         }
         
-        return self.message
+        return self.platformMessage
         
         
     }
@@ -267,8 +247,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     
     @IBAction func tapRepeatsSpeech(_ sender: UITapGestureRecognizer) {
-        print("TAPBEINGCALLED")
-        speech.playSound()
+        beepMessage.playSound()
         textToSpeech(string: self.distanceReading.text!)
     }
     
