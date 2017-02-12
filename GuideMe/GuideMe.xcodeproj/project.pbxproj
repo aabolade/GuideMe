@@ -284,12 +284,6 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 082842B41E40F45D00DB36F6;
 					};
-					8FE647AD1E48CC1500DAC97F = {
-						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = PDELZ2628K;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 082842B41E40F45D00DB36F6;
-					};
 				};
 			};
 			buildConfigurationList = 082842B01E40F45D00DB36F6 /* Build configuration list for PBXProject "GuideMe" */;
